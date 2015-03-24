@@ -1,0 +1,140 @@
+<html>
+	<head>
+		<title>Brooke</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+  		$('a[href*=#]:not([href=#])').click(function() {
+    		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      			var target = $(this.hash);
+      			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      			if (target.length) {
+    	    		$('html,body').animate({
+          			scrollTop: (target.offset().top - $('#nav').height())
+        			}, 1000);
+        			return false;
+      			}
+    		}
+
+		});
+  	});
+    
+</script>
+
+<link rel="stylesheet" href="./stylesheets/ie.css">
+		<link rel="stylesheet" href="./stylesheets/print.css">
+		<link rel="stylesheet" href="./stylesheets/screen.css">
+		<link rel="stylesheet" href="icon-css/brooklyn.css">
+						<script src="viewport-units-buggyfill.js"></script>
+		
+<script>window.viewportUnitsBuggyfill.init();</script>
+		
+
+	</head>
+	<body>
+		<div id="nav">
+			<ul>
+				<li><a href="#work">Work</a></li>
+				<li>Blog</li>
+				<li>R&eacute;sum&eacute;</li>
+			</ul>
+			<ul>
+				<li><a href="//twitter.com/code_cookies/"><i class="icon-twitter"></i></a></li>
+				<li><a href="mailto:hatton.brooke@me.com"><i class="icon-mail"></i></a></li>
+			</ul>
+		</div>
+		<header>
+			<div class="intro">
+				<h1>Brooke Hatton</h1>
+				<p>Webdesign, and random stuff</p>
+				</div>
+		</header>
+		<section id="work" class="site">
+			<div class="grid ">
+				<div class="col-1-1">
+					<h2>Newark and Retford toymaster</h2>
+				</div>
+				
+				<div class="col-1-2 flow-opposite">
+						<img src="./images/newark/desktop.jpg">
+						
+				</div>
+				<div class="col-1-2 text">
+				<div class="module">
+					
+						<p>
+						Newark and Retford toymaster asked me to design a simple site that would display basic contact details and maps to their customers. 
+						<ul>
+							<li>Responsive design</li>
+							<li>One click call, email and Directions on most modern smartphones</li>
+							<li>Compatible with all modern browsers</li>
+						</ul>
+						</p>
+					</div>
+				</div>
+				
+				</div>
+			</div>
+
+
+		
+			
+		</section>
+		<section id="work" class="app">
+			<div class="grid">
+				<div class="col-1-1">
+					<h2>Days Until
+					<em>(Chrome Packaged App)</em></h2>
+
+				</div>
+				<div class="col-1-2">
+					<div class="module">A simple app that allows you to have a list of events and time until that event.
+Keep track of your busy life, This app allows you to note down events and activities and countdown the days until the event. Super simple but effective.
+				</div>
+				</div>
+				<div class="col-1-3">
+					<div class="">
+						<img src="./images/Daysuntil.png">
+					</div>
+				</div>
+				
+			</div>
+			
+
+		
+			
+		</section>
+		<section id="CV">
+			
+				<div class="grid grid-pad">
+					<div class="col-1-1 centre">
+						<h2>Education</h2>
+					</div>
+					<div class="col-1-2">
+						<div class="module">
+							<h3 class="centre">John Ferneley College - 2008 - 2013</h3>
+							<ul>
+								<li></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-1-2">
+						<div class="module">
+							<h3 class="centre">Melton Vale Post	16 centre - 2013 - Present</h3>
+						</div>
+					</div>
+					
+			</div>
+		
+				<div class="grid">
+					<div class="col-1-1 centre">	
+						<h2>Experience</h2>
+					</div>
+			</div>			
+
+		</section>
+		<footer></footer>
+
+	</body>
+</html>
