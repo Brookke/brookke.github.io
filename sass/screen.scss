@@ -1,5 +1,6 @@
 $color-nav-link: #1d1d1d;
-
+$color-module: rgb(73, 73, 73);
+$color-module-background: #f8f8f8;
 @import "compass/css3";
 .clearfix {
   &:after {
@@ -118,8 +119,9 @@ img {
 }
 
 .module {
-  padding: $pad;
-  background: white;
+	padding: $pad;
+	background-color: $color-module-background;
+	color:$color-module;
 }
 
 /* Opt-in outside padding */
@@ -133,7 +135,7 @@ img {
 	text-align:center;
 }
 .text {
-	background-color:white;
+
 }
 body {
 	font-family:'Open sans', sans-serif;
