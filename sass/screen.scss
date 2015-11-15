@@ -79,9 +79,6 @@ header a:hover { text-decoration: none; }
     @extend .clearfix
   
 }
-
-
-
 img {
 	width:100%;
 	height:auto;
@@ -152,6 +149,9 @@ h1 {
 }
 section {
 	padding: 0 80px;
+	a {
+		text-decoration: none;
+	}
 	h2 {
 		color: white;
 		em {
