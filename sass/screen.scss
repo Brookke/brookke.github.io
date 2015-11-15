@@ -130,6 +130,11 @@ img {
   [class*='col-']:last-of-type {
     padding-right: $pad;
   }
+  @media (max-width:850px) {
+  	[class*='col-'] {
+  		padding-right: $pad;
+  	}
+  }
 }
 .centre {
 	text-align:center;
