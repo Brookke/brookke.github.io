@@ -1,183 +1,178 @@
-/* line 6, ../sass/screen.scss */
-.clearfix:after, header:after, .grid:after {
-  content: "";
-  display: table;
+/* line 9, ../sass/screen.scss */
+.clearfix::after, header::after, .grid::after {
   clear: both;
+  content: '';
+  display: table;
 }
 
-/* line 12, ../sass/screen.scss */
-* {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/* line 17, ../sass/screen.scss */
+/* line 16, ../sass/screen.scss */
 html {
+  box-sizing: border-box;
   font: 100%/1.5 "Open Sans", sans-serif;
   font-weight: 400;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
+/* line 24, ../sass/screen.scss */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 @media (min-width: 40rem) {
-  /* line 25, ../sass/screen.scss */
+  /* line 31, ../sass/screen.scss */
   html {
     font-size: 112%;
   }
 }
 @media (min-width: 64rem) {
-  /* line 29, ../sass/screen.scss */
+  /* line 37, ../sass/screen.scss */
   html {
     font-size: 120%;
   }
 }
-/* line 34, ../sass/screen.scss */
+/* line 43, ../sass/screen.scss */
 header {
-  height: 80%;
   background-color: #1d1d1d;
+  height: 80%;
   text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+}
+/* line 50, ../sass/screen.scss */
+header h1 {
+  border: 3px solid #fff;
+  border-radius: 3px;
+  color: #fff;
+  display: inline-block;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  padding: .4rem .6rem;
+  text-transform: uppercase;
+}
+/* line 61, ../sass/screen.scss */
+header p {
+  margin: 0 auto;
+}
+/* line 66, ../sass/screen.scss */
+header a {
+  text-decoration: underline;
+}
+/* line 70, ../sass/screen.scss */
+header a:hover {
+  text-decoration: none;
 }
 
-/* line 41, ../sass/screen.scss */
+/* line 76, ../sass/screen.scss */
 .intro {
   margin: 4rem 0;
 }
 
 @media (min-width: 40rem) {
-  /* line 44, ../sass/screen.scss */
+  /* line 81, ../sass/screen.scss */
   .intro {
     margin: 6rem 0;
   }
 }
-/* line 48, ../sass/screen.scss */
-header h1 {
-  border: 3px solid #fff;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  color: #fff;
-  padding: .4rem .6rem;
-  display: inline-block;
-  font-size: 1.8rem;
-  text-transform: uppercase;
-  margin-bottom: 2rem;
-}
-
-/* line 61, ../sass/screen.scss */
-header p {
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0 auto;
-}
-
-/* line 66, ../sass/screen.scss */
-header a {
-  color: rgba(255, 255, 255, 0.9);
-  text-decoration: underline;
-}
-
-/* line 71, ../sass/screen.scss */
-header a:hover {
-  text-decoration: none;
-}
-
-/* line 75, ../sass/screen.scss */
+/* line 86, ../sass/screen.scss */
 .grid {
   margin: 0 auto;
   max-width: 1200px;
   overflow: hidden;
 }
 
-/* line 83, ../sass/screen.scss */
+/* line 93, ../sass/screen.scss */
 img {
-  width: 100%;
   height: auto;
+  width: 100%;
   padding: 0;
 }
 
-/* line 88, ../sass/screen.scss */
+/* line 99, ../sass/screen.scss */
 [class*='col-'] {
   float: left;
-  padding-right: 20px;
+  padding: 0 10px;
 }
-/* line 91, ../sass/screen.scss */
-.grid [class*='col-']:last-of-type {
-  padding-right: 0;
-}
-/* line 94, ../sass/screen.scss */
+/* line 105, ../sass/screen.scss */
 [class*='col-'] .flow-opposite {
   float: right;
 }
 
-/* line 96, ../sass/screen.scss */
+/* line 110, ../sass/screen.scss */
 .col-2-3 {
   width: 66.66%;
 }
 
-/* line 99, ../sass/screen.scss */
+/* line 114, ../sass/screen.scss */
 .col-1-3 {
   width: 33.33%;
 }
 
-/* line 102, ../sass/screen.scss */
+/* line 118, ../sass/screen.scss */
 .col-1-2 {
   width: 50%;
 }
 
-/* line 105, ../sass/screen.scss */
+/* line 122, ../sass/screen.scss */
 .col-1-4 {
   width: 25%;
 }
 
-/* line 108, ../sass/screen.scss */
+/* line 126, ../sass/screen.scss */
 .col-3-4 {
   width: 75%;
 }
 
-/* line 111, ../sass/screen.scss */
+/* line 130, ../sass/screen.scss */
 .col-1-8 {
   width: 12.5%;
 }
 
-/* line 114, ../sass/screen.scss */
-.col-1-8 {
-  width: 12.5%;
-}
-
-/* line 117, ../sass/screen.scss */
+/* line 134, ../sass/screen.scss */
 .col-1-1 {
   width: 100%;
 }
 
-/* line 121, ../sass/screen.scss */
+/* line 138, ../sass/screen.scss */
 .module {
-  padding: 20px;
   background-color: #f8f8f8;
   color: #494949;
+  position: relative;
+  padding: 20px;
+}
+/* line 144, ../sass/screen.scss */
+.module.seperator::after {
+  position: absolute;
+  bottom: 0;
+  content: '';
+  display: block;
+  width: 90%;
+  height: 1px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  background: #1d1d1d;
 }
 
 /* Opt-in outside padding */
-/* line 128, ../sass/screen.scss */
+/* line 160, ../sass/screen.scss */
 .grid-pad {
-  padding: 20px 0 20px 20px;
-}
-/* line 130, ../sass/screen.scss */
-.grid-pad [class*='col-']:last-of-type {
-  padding-right: 20px;
+  padding: 20px 20px 20px;
 }
 @media (max-width: 850px) {
-  /* line 134, ../sass/screen.scss */
+  /* line 164, ../sass/screen.scss */
   .grid-pad [class*='col-'] {
-    padding-right: 20px;
+    padding: 20px;
   }
 }
 
-/* line 139, ../sass/screen.scss */
+/* line 170, ../sass/screen.scss */
 .centre {
   text-align: center;
 }
 
-/* line 145, ../sass/screen.scss */
+/* line 176, ../sass/screen.scss */
 body {
   font-family: 'Open sans', sans-serif;
   background-color: #1d1d1d;
@@ -185,73 +180,74 @@ body {
   margin: 0;
 }
 
-/* line 152, ../sass/screen.scss */
+/* line 184, ../sass/screen.scss */
 h1 em {
   color: #666;
   font-size: 16px;
 }
 
-/* line 157, ../sass/screen.scss */
+/* line 190, ../sass/screen.scss */
 section {
   padding: 0 80px;
+  width: 100%;
 }
-/* line 159, ../sass/screen.scss */
+/* line 194, ../sass/screen.scss */
 section a {
   text-decoration: none;
 }
-/* line 162, ../sass/screen.scss */
+/* line 198, ../sass/screen.scss */
 section h2 {
   color: white;
 }
-/* line 164, ../sass/screen.scss */
+/* line 201, ../sass/screen.scss */
 section h2 em {
   color: #eee;
   font-size: 0.5em;
 }
-/* line 169, ../sass/screen.scss */
+/* line 207, ../sass/screen.scss */
 section#CV {
   background-color: #00aba9;
 }
-/* line 173, ../sass/screen.scss */
+/* line 212, ../sass/screen.scss */
 section#work.site {
   background-color: #a70f03;
 }
-/* line 176, ../sass/screen.scss */
+/* line 216, ../sass/screen.scss */
 section#work.app {
   background-color: #2b5797;
 }
 
-/* line 182, ../sass/screen.scss */
+/* line 222, ../sass/screen.scss */
 .flow-opposite {
   float: right;
 }
 
 @media (max-width: 850px) {
-  /* line 184, ../sass/screen.scss */
+  /* line 227, ../sass/screen.scss */
   [class*='col-'] {
     width: 100%;
-    padding-right: 0;
+    padding: 0;
   }
-  /* line 187, ../sass/screen.scss */
+  /* line 231, ../sass/screen.scss */
   [class*='col-'] .flow-opposite {
     float: left;
   }
 
-  /* line 189, ../sass/screen.scss */
+  /* line 236, ../sass/screen.scss */
   section {
     padding: 0 5px;
   }
 
-  /* line 194, ../sass/screen.scss */
+  /* line 242, ../sass/screen.scss */
   #nav ul:first-of-type {
     padding-left: 0.5em;
   }
-  /* line 196, ../sass/screen.scss */
+  /* line 245, ../sass/screen.scss */
   #nav ul:first-of-type li {
     width: 3.2em;
   }
 }
-/* line 205, ../sass/screen.scss */
+/* line 253, ../sass/screen.scss */
 #nav {
   color: #1d1d1d;
   opacity: 0.9;
@@ -263,41 +259,41 @@ section#work.app {
   text-align: center;
   display: block;
 }
-/* line 216, ../sass/screen.scss */
+/* line 264, ../sass/screen.scss */
 #nav ul {
   padding-left: 1em;
   list-style: none;
   float: left;
 }
-/* line 219, ../sass/screen.scss */
+/* line 268, ../sass/screen.scss */
 #nav ul li {
   width: 3.5em;
   display: inline-block;
 }
-/* line 223, ../sass/screen.scss */
+/* line 272, ../sass/screen.scss */
 #nav ul li a {
   text-decoration: none;
 }
-/* line 225, ../sass/screen.scss */
+/* line 275, ../sass/screen.scss */
 #nav ul li a:link {
   color: #1d1d1d;
 }
-/* line 229, ../sass/screen.scss */
+/* line 279, ../sass/screen.scss */
 #nav ul li a:hover {
   text-decoration: underline;
   color: orange;
 }
-/* line 233, ../sass/screen.scss */
+/* line 284, ../sass/screen.scss */
 #nav ul li a:visited {
   color: #1d1d1d;
 }
-/* line 240, ../sass/screen.scss */
+/* line 292, ../sass/screen.scss */
 #nav ul:last-of-type {
   padding-right: 1em;
   padding-left: 0;
   float: right;
 }
-/* line 244, ../sass/screen.scss */
+/* line 297, ../sass/screen.scss */
 #nav ul:last-of-type li {
   width: 2em;
   font-size: 1.2em;
