@@ -44,7 +44,7 @@ header {
     @extend .clearfix;
 
     background-color: #1d1d1d;
-    height: 80%;
+    min-height: 80%;
     text-align: center;
     color: rgba(255, 255, 255, 0.9);
     h1 {
