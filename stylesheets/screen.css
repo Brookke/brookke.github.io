@@ -190,6 +190,7 @@ h1 em {
 section {
   padding: 0 80px;
   width: 100%;
+  z-index:10;
 }
 /* line 194, ../sass/screen.scss */
 section a {
@@ -249,6 +250,7 @@ section#work.app {
 }
 /* line 253, ../sass/screen.scss */
 #nav {
+  z-index: 100;
   color: #1d1d1d;
   opacity: 0.9;
   background-color: white;
