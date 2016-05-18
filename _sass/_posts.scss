@@ -1,0 +1,58 @@
+#categories {
+	margin: 0;
+	padding: 0;
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	.category {
+
+		list-style: none;
+		width:100%;
+		
+
+		.category-wrapper {
+			background: red;
+			.posts {
+				min-height: $post-height + 2 * $spacing-unit;
+				list-style: none;
+				display:flex;
+				flex-flow: row wrap;
+				justify-content: center;
+				align-content: space-around;
+		
+				
+
+				.post {
+					margin: 20px;
+					border-radius: 10px;
+					width: $post-width;
+					background:$background-color;
+					height: $post-height;
+					
+					.content {
+						padding: 10px;
+					}
+
+					.header {
+						list-style:none;
+						padding: 0;
+						margin: 0.5rem;
+						display: block;
+						height: 2rem;
+
+						.title {
+							float: left;
+						}
+						.date {
+							float: right;
+						}
+
+					}
+
+				}
+
+			}
+		}
+	}
+}

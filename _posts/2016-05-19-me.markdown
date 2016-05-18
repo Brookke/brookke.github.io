@@ -1,0 +1,9 @@
+---
+layout: post
+title:  "Card 10"
+date:   2016-04-19 21:17:20 +0100
+categories: Education
+---
+This is a test card I am currently developing. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ull
