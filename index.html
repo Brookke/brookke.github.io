@@ -11,13 +11,13 @@ layout: default
                 {% for posts in category %}
                     {% for post in posts %}
                         {% if post.title %}
-                        <li class="post">
+                        <li class="post animated slideInLeft">
 
                             <ul class="header">
                                 <li class="title"><a href="{{ post.url }}">{{ post.title }}</a></li>
-                                <li class="date">{{ post.date }}</li>
+                                <li class="date">{{ post.date | date: '%B %d, %Y' }}</li>
                             </ul>
-                            
+                            <img src="{{ site.url }}{{ post.image }}">
                             <p class="content">{{ post.content | strip_html | truncatewords: 60 }} </p>
                         </li>
                         {% endif %}

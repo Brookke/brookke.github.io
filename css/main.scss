@@ -6,7 +6,7 @@
 
 
 // Our variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-family: "Open Sans", sans-serif;
 $base-font-size:   16px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
@@ -14,8 +14,8 @@ $base-line-height: 1.5;
 
 $spacing-unit:     30px;
 
-$text-color:       #111;
-$background-color: #fdfdfd;
+$text-color:       rgba(240, 240, 240, 1);
+$background-color: #222222;
 $brand-color:      #2a7ae2;
 
 $grey-color:       #828282;
@@ -30,8 +30,8 @@ $on-laptop:        800px;
 
 
 //post width
-$post-width:300px;
-$post-height:400px;
+$post-width:350px;
+$post-height:450px;
 
 
 // Use media queries like this:

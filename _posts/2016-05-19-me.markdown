@@ -1,9 +1,13 @@
 ---
 layout: post
-title:  "Card 10"
+title:  "Newark and Retford"
 date:   2016-04-19 21:17:20 +0100
-categories: Education
+category: Apps and Web
+image: /assets/toy-shop-main.png
 ---
-This is a test card I am currently developing. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ull
+Newark and Retford toymaster asked me to design a simple site that would display basic contact details and maps to their customers. This site was built in 2014 intended to be a bridge to fill the gap before an online store was made avalible.
+
+- Responsive design
+- One click call, email and Directions on most modern smartphones
+- Compatible with all modern browsers
+- Website links: Retford Newark

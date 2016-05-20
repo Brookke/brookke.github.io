@@ -12,7 +12,8 @@
 		
 
 		.category-wrapper {
-			background: red;
+			background: #CCCCCC;
+
 			.posts {
 				min-height: $post-height + 2 * $spacing-unit;
 				list-style: none;
@@ -24,27 +25,39 @@
 				
 
 				.post {
+					color: $text-color;
 					margin: 20px;
-					border-radius: 10px;
+					border-radius: 5px;
+					//border: 4px rgb(133, 202, 93) solid;
 					width: $post-width;
-					background:$background-color;
-					height: $post-height;
+					background:#222222;
 					
+					box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+					
+					
+					img {
+						width:100%;
+					}
 					.content {
 						padding: 10px;
+						font-size: 0.8rem;
 					}
 
 					.header {
 						list-style:none;
-						padding: 0;
-						margin: 0.5rem;
-						display: block;
-						height: 2rem;
+						padding: 0.5rem;
+						font-size: 1.3rem;
 
+						display: block;
+						height: 2.4rem;
+						border-bottom: 2px $text-color solid;
+						
 						.title {
-							float: left;
+							text-align: center;
 						}
 						.date {
+							display:none;
 							float: right;
 						}
 
