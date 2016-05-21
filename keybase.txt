@@ -1,0 +1,74 @@
+==================================================================
+https://keybase.io/brookke
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://brookehatton.com
+  * I am brookke (https://keybase.io/brookke) on keybase.
+  * I have a public key with fingerprint E73C 79A1 AF23 044C 42EF  A205 B29C C129 1B8E 27A3
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01013b6ff75d68d823b1df96a09972639596fa6672f73a0c3bc88c3ac05202e878fb0a",
+            "fingerprint": "e73c79a1af23044c42efa205b29cc1291b8e27a3",
+            "host": "keybase.io",
+            "key_id": "b29cc1291b8e27a3",
+            "kid": "01013b6ff75d68d823b1df96a09972639596fa6672f73a0c3bc88c3ac05202e878fb0a",
+            "uid": "a61d72e1594f8a5ea0a155587d6a4719",
+            "username": "brookke"
+        },
+        "service": {
+            "hostname": "brookehatton.com",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1463739736,
+    "expire_in": 157680000,
+    "prev": "83e76fd6827abea3d170b57aecfbe7a7e2d51a94f3cb66b20e832287db9d6c4d",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.53
+Comment: https://keybase.io/crypto
+
+yMNBAnicrVJ7UBVVHL4gyMhrGAn5g6jcwRAl2vfjNkCTEpSB4iQ6aV3O7p6FBe7d
+e/cuxEMEeRSgIYQiBNko5tjAQBgNzSQgJTEBNai8QmiC1AAHhcopSKd2mZrpj/7s
+/HPm/M73fef7vjlXfdaZPF0uNfaGBVWGNrkM9r6XadofdftAHsIrYg5izkPS4doG
+M0To1CzpsoiYERRDMYKnJYmhRJoVWZzgMVHiaIByHIPTBEdxtARomsElhgCoQPAC
+ywoEEFAKR3HIMqzEowAJRyTZlgJVuyrbNF0WMoTAcAADEk6gJCmQOJQAjlI8zgkC
+hnMYz0KcAYROTFWcBkM3xwMnjJAVfaYfLGv2/gP/P/vOXJMDNCYyOMQojpRYQEGA
+AoyiKJYRaUAyGGcAnVC1ASs0XKmKkp4OkfxwRB9myQI0ejWC/BsAU4GmKbYIQbHq
+dLuqaIqgZOi3qZpmd5oNtpZjN+BvQt7yt5CFl22iXqXOyIKqU1ZsiBnTkYImG8oY
+SRMMwTEEHY7AbLusQotsICiGZlF9Ge/ALF2SJSBDS3o1ems8BISIMShPMQAKEg8Z
+wEBcpDCgpyUEnqZ5HIUsgeN6Xp4TaYEUESOaw6YgZlK3CVJ0SaecYgNapqrn/qL3
+kJvJxdO03t3V+GImzw1+/3y83EE/U/E7ls1VkRvLRx0bY6/G/vJ2YdfueA3GTffV
+U1Huv0d7NMwW5rV7HXBdcj9bhEzdWZ3dlPTu0PNznh9s+X7e9ajbqZebAx/dO92T
+N4c7djJ7rD4h48Mr/jEBeQMxdyup2h6hH6/vifzR/9vC6wtc6R9lE0V/LlJnfCdc
+z/u2fjaasKliV0HDdL4lLXH5Ss3R5+xhHUydpbgNy7zyytDpa1QQHjG+90j/Y7f2
+3hzJPfKJef/K+amtoXOrtfP37pf0n7gwm7z5wQs7vsxB+w4Kr6fOpV2uSBvyTbu8
+8vWl1l+Dv9leEpndUj7/VMeTxy52+j8aSxaDD0+B9vTm8s9Huvte/C0g17XhffwQ
+913y8ZsT17x2jltj44uXukq2nQuoLEiqXoopeob0fIP8CFNuPDG54uVYcNx+a2Sb
+zB/ubooZsKv7zPviDq5Ohrh8OG1NeOnpqJnty9eDI/3dq3szJtubhkuPL5woH207
+GVfbCXbVR6/URQV7t7AZd2NfGyu9kbDofq7u2bLWxmzlB+tF009FiTUexeJYSHO9
+W3lzZFholT1x0KEuts94jCv4xxvCzN6dWj7/MFDkBiIKYmq+Qgur9txqD1zvVxO/
+9U5ZdFd3csjDnyGs8NmR5e3dURrfdpJCM9Thlk+DzvLsjMv96unegGU8imm80Lnl
+QduZrKZgMmnd4+aAV6f/AnqwwGg=
+=nYQS
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/brookke
+
+==================================================================
