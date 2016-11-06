@@ -2,3 +2,12 @@
 //
 // Copy variables from `_variables.scss` to this file to override default values
 // without modifying source files.
+$enable-flex:             true;
+
+$blue:                  #4189BD;
+$green-light:           #3D8A81;
+$brown-lighter:         #967069;
+$paper:                 #CBE0F0;
+
+$jumbotron-paper:          $paper;
+$jumbotron-bg:              $blue;

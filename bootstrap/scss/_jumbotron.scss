@@ -18,3 +18,22 @@
   padding-left: 0;
   @include border-radius(0);
 }
+
+.jumbotron-cover {
+  padding-bottom: 0;
+  min-height: 95vh;
+  text-align: center;
+  position: relative;
+
+  .intro {
+    margin-top: 20vh;
+    margin-bottom: 10vh;
+    height: 10em;
+  }
+
+  .paper {
+    padding: $spacer*2;
+    background: $jumbotron-paper;
+    text-align: left;
+  }
+}
