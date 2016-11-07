@@ -4719,6 +4719,8 @@ a.tag:focus, a.tag:hover {
   background: #fffef9;
   text-align: left;
   border-radius: 2px 2px 0 0;
+  -webkit-box-shadow: 0px -5px 20px -17px black;
+          box-shadow: 0px -5px 20px -17px black;
 }
 
 .alert {
