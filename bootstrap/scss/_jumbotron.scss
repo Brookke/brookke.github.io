@@ -26,11 +26,20 @@
   text-align: center;
   position: relative;
   margin-bottom: 0;
+  box-shadow: 0px 5px 20px -17px black;
 
   .intro {
     margin-top: 20vh;
     margin-bottom: 10vh;
     height: 10em;
+
+    .icon {
+      font-size: 2em;
+      color: $gray-dark;
+      &:hover {
+        color: #818a91;
+      }
+    }
   }
 
   .paper {

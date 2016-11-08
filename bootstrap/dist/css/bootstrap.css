@@ -4707,12 +4707,23 @@ a.tag:focus, a.tag:hover {
   text-align: center;
   position: relative;
   margin-bottom: 0;
+  -webkit-box-shadow: 0px 5px 20px -17px black;
+          box-shadow: 0px 5px 20px -17px black;
 }
 
 .jumbotron-cover .intro {
   margin-top: 20vh;
   margin-bottom: 10vh;
   height: 10em;
+}
+
+.jumbotron-cover .intro .icon {
+  font-size: 2em;
+  color: #373a3c;
+}
+
+.jumbotron-cover .intro .icon:hover {
+  color: #818a91;
 }
 
 .jumbotron-cover .paper {
