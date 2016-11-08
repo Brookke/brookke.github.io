@@ -8,6 +8,7 @@ $enable-rounded:          false;
 
 
 $gradient:				linear-gradient(to bottom, #8e9eab , #eef2f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
+$gradient-color:	 	#8e9eab;
 $light-grey:            #FBFFFD;
 $green-light:           #3D8A81;
 $brown-lighter:         #967069;
@@ -20,3 +21,5 @@ $jumbotron-bg-gradient:      $gradient;
 
 $headings-font-family: 		  'Bitter', serif;
 $font-family-base: 		'Raleway', sans-serif;
+$font-family-size: 					   0.9rem;
+$body-bg: 					  $gradient-color;
