@@ -1,0 +1,52 @@
+.jumbotron {
+  padding: $jumbotron-padding ($jumbotron-padding / 2);
+  margin-bottom: $jumbotron-padding;
+  background: $jumbotron-bg-color;
+  background: $jumbotron-bg-gradient;
+  @include border-radius($border-radius-lg);
+
+  @include media-breakpoint-up(sm) {
+    padding: ($jumbotron-padding * 2) $jumbotron-padding;
+  }
+}
+
+.jumbotron-hr {
+  border-top-color: darken($jumbotron-bg-color, 10%);
+}
+
+.jumbotron-fluid {
+  padding-right: 0;
+  padding-left: 0;
+  @include border-radius(0);
+}
+
+.jumbotron-cover {
+  padding-bottom: 0;
+  min-height: 95vh;
+  text-align: center;
+  position: relative;
+  margin-bottom: 0;
+  box-shadow: 0px 5px 20px -17px black;
+
+  .intro {
+    margin-top: 20vh;
+    margin-bottom: 10vh;
+    height: 10em;
+
+    .icon {
+      font-size: 2em;
+      color: $gray-dark;
+      &:hover {
+        color: #818a91;
+      }
+    }
+  }
+
+  .paper {
+    padding: $spacer*2;
+    background: $jumbotron-paper;
+    text-align: left;
+    border-radius: 2px 2px 0 0;
+    box-shadow: 0px -5px 20px -17px black;
+  }
+}
