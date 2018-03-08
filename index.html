@@ -1,177 +1,158 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="Brooke Hatton, Computer Science Student at York University. Making pointless things for my own amusement."/>
-        <meta name="google-site-verification" content="rt53dnmciFFqyh_5cgSE9MuIYbirehIoiOCwlxYpKsg" />
-        <title>Brooke Hatton</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="bootstrap/dist/js/bootstrap.min.js"></script>
-        <script type="text/javascript">
-        $(function() {
-            $('a[href*=#]:not([href=#])').click(function() {
-                if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-                    var target = $(this.hash);
-                    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-                    if (target.length) {
-                        $('html,body').animate({
-                            scrollTop: (target.offset().top - $('#nav').height())
-                        }, 1000);
-                            return false;
-                        }
-                    }
-                });
-            });
-        </script>
-        <link href="https://fonts.googleapis.com/css?family=Bitter|Raleway" rel="stylesheet">
-        <link rel="stylesheet" href="icon-css/brooklyn.css">
-        <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
-        <style type="text/css">
-          .row-padding {
-            padding: 30px;
-            margin: 30px 0px;
-            background: #fffef9;
-            box-shadow: 0px 5px 20px -17px black;
-            border-radius: 2px;
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Brooke Hatton, Computer Science Student at York University. Making pointless things for my own amusement."
+  />
+  <meta name="google-site-verification" content="rt53dnmciFFqyh_5cgSE9MuIYbirehIoiOCwlxYpKsg" />
+  <title>Brooke Hatton</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $('a[href*=#]:not([href=#])').click(function () {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+          if (target.length) {
+            $('html,body').animate({
+              scrollTop: (target.offset().top - $('#nav').height())
+            }, 1000);
+            return false;
           }
-        </style>
-        <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        }
+      });
+    });
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Bitter|Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="icon-css/brooklyn.css">
+  <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+  <style type="text/css">
+    .row-padding {
+      padding: 30px;
+      margin: 30px 0px;
+      background: #fffef9;
+      box-shadow: 0px 5px 20px -17px black;
+      border-radius: 2px;
+    }
+  </style>
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-38896563-4', 'auto');
-        ga('send', 'pageview');
+    ga('create', 'UA-38896563-4', 'auto');
+    ga('send', 'pageview');
 
-        </script>
-        
-    </head>
-    <body>
-      <div class="jumbotron jumbotron-cover">
-      <div class="intro">
-        <h4 class="display-4">Brooke Hatton</h1>
-        <h5>Computer Science Student</h2>
-        <h6 class="text-muted">University of York</h3>
-        <a class="icon" href="//github.com/Brookke"><i class="icon-github-circled"></i></a><a class="icon" href="//twitter.com/Brookke"><i class="icon-twitter"></i></a><a class="icon" href="mailto:hatton.brooke@me.com"><i class="icon-mail"></i></a>
+  </script>
+
+</head>
+
+<body>
+  <div class="jumbotron jumbotron-cover">
+    <div class="intro">
+      <h4 class="display-4">Brooke Hatton</h4>
+      <h5>Computer Science Student</h5>
+      <h6 class="text-muted">University of York</h6>
+      <a class="icon" href="//github.com/Brookke">
+        <i class="icon-github-circled"></i>
+      </a>
+      <a class="icon" href="//twitter.com/Brookke">
+        <i class="icon-twitter"></i>
+      </a>
+      <a class="icon" href="mailto:hatton.brooke@me.com">
+        <i class="icon-mail"></i>
+      </a>
+    </div>
+
+    <div class="row flex-items-xs-bottom" style="height:100%;">
+      <div class="paper col-lg-8 offset-lg-2">
+
+        <h2>Hello World</h2>
+        <p>I am a third-year Computer Science student at the University of York, currently on a industrial placement at Morgan
+          Stanley, where I am expanding on my experience in Java server side development and building user interfaces with
+          Angular and Typescript. I am extremely passionate about user experience and design, constantly looking for ways
+          to improve the products that I make.</p>
+        <p>As a child, I was always taking things apart to understand how they work and as I have gotten older this hasn't changed,
+          although, things usually work when I put them back together now. I am passionate and committed to my work, I enjoy
+          seeing a problem through and working out a solution. Above all, I enjoy working in a team that is creative and
+          enthusiastic about tasks and in which we all have our own individual strengths. I enjoy and excel in taking the
+          time to sculpt an idea considering the users at every stage of the process.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 dividing-shadow"></div>
+  <div class="container">
+    <div class="row row-padding">
+      <div class="col-md-7 col-lg-6">
+        <h3>Newark and Retford Toys</h3>
+        <p>
+          East Midlands Toy Company asked me to design a simple site that would display basic contact details and maps to their customers
+          for both their Neward and Retford branches. This site was built in 2014 intended to be a bridge to fill the gap
+          before an online store was made available.
+          <ul>
+            <li>Responsive design</li>
+            <li>One click call, email and Directions on most modern smartphones</li>
+            <li>Compatible with all modern browsers</li>
+          </ul>
+          Website links:
+          <a href="http://www.retfordtoys.co.uk">Retford</a>
+          <a href="http://www.newarktoys.co.uk">Newark</a>
+        </p>
+      </div>
+      <div class="col-lg-6 col-md-5">
+        <img class="img-fluid" src="./images/newark/mobile%20and%20desktop.png">
+      </div>
+    </div>
+    <div class="row row-padding">
+      <div class="push-lg-6 push-md-5 col-md-7 col-lg-6">
+        <h3>East Midlands Toy Company - Sales sheet</h3>
+        <p>
+          During my time as a sales assistant at their Melton Mowbray branch, I noticed that to record the sales of each store at the
+          end of they day, they would write the information down on a sheet of paper and then at the end of each month, someone
+          would go through that months worth of paper documents and type it into an excel spreadsheet.</p>
+        <p>
+          This had lots of room for human error. It was also very time consuming; having to manually calculate parts of the information
+          write it down and then have someone digitize it. Working with the company I designed and created a online system
+          that would allow them to digitally enter the sales for each store at the end of each day and run reports on this
+          data.
+        </p>
+      </div>
+      <div class="pull-lg-6 pull-md-7 col-lg-6 col-md-5">
+        <img class="img-fluid" src="./images/emtcl.jpg">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row row-padding">
+      <div class="col-md-7 col-lg-6 ">
+        <h2>Days Until
+          <em>(Chrome Packaged App)</em>
+        </h2>
+        <p>A simple app that allows you to have a list of events and time until that event. Keep track of your busy life, This
+          app allows you to note down events and activities and countdown the days until the event. Super simple but effective.</p>
+        <span>The list of features include:</span>
+        <ul>
+          <li>Multiple List support</li>
+          <li>Ordering of Events, both manually and automatically</li>
+          <li>Editing of current event names</li>
+        </ul>
+
+        <a href="https://chrome.google.com/webstore/detail/days-until/gjoncaelhmjienakbbocmlceofcjpdlg?hl=en">Link</a>
+      </div>
+      <div class="col-lg-6 col-md-5">
+        <img class="img-fluid" src="./images/Daysuntil.png">
       </div>
 
-        <div class="row flex-items-xs-bottom" style="height:100%;">
-          <div class="paper col-lg-8 offset-lg-2">
-                
-            <h2>Hello World</h2>
-            <p>I am a second year Computer Science student at York University in my second year. I know the basics of JS, Python, Java and GoLang. If I don't know it I am willing to learn. I currently hold the position of assistant head of computing at URY</p>
-            
-            <p>As a child I was always taking things apart to understand how they work and as I have gotten older this hasn't changed, although, things usually work when I put them back together now. I am passionate and committed to my work, I enjoy seeing a problem through and working out a solution. Above all, I enjoy working in a team that is creative and enthusiastic about tasks and in which we all have our own individual strengths. In terms of my own projects, I enjoy and excel in taking the time to sculpt an idea, and carry it through to the end.</p>
+    </div>
+  </section>
+  <footer>
+  </footer>
+</body>
 
-                  </div>
-              </div>
-        </div>
-        <div class="col-xs-12 dividing-shadow"></div>
-        <div class="container">
-          <div class="row row-padding">
-            <div class="col-md-7 col-lg-6">
-              <h3>Newark and Retford Toys</h3>
-              <p>
-                East Midlands Toy Company asked me to design a simple site that would display basic contact details and maps to their customers for both their Neward and Retford branches. This site was built in 2014 intended to be a bridge to fill the gap before an online store was made available.
-              <ul>
-                  <li>Responsive design</li>
-                  <li>One click call, email and Directions on most modern smartphones</li>
-                  <li>Compatible with all modern browsers</li>
-              </ul>
-              Website links: <a href="http://www.retfordtoys.co.uk">Retford</a> <a href="http://www.newarktoys.co.uk">Newark</a>
-              </p>
-            </div>
-            <div class="col-lg-6 col-md-5">
-              <img class="img-fluid" src="./images/newark/mobile%20and%20desktop.png">
-            </div>
-          </div>
-          <div class="row row-padding">
-            <div class="push-lg-6 push-md-5 col-md-7 col-lg-6">
-              <h3>East Midlands Toy Company - Sales sheet</h3>
-              <p>
-              During my time as a sales assistant at their Melton Mowbray branch, I noticed that to record the sales of each store at the end of they day, they would write the information down on a sheet of paper and then at the end of each month, someone would go through that months worth of paper documents and type it into an excel spreadsheet.</p>
-              <p>
-              This had lots of room for human error. It was also very time consuming; having to manually calculate parts of the information write it down and then have someone digitize it. Working with the company I designed and created a online system that would allow them to digitally enter the sales for each store at the end of each day and run reports on this data.
-              </p>
-            </div>
-            <div class="pull-lg-6 pull-md-7 col-lg-6 col-md-5">
-              <img class="img-fluid" src="./images/emtcl.jpg">
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row row-padding">
-            <div class="col-md-7 col-lg-6 ">
-              <h2>Days Until <em>(Chrome Packaged App)</em></h2>
-              <p>A simple app that allows you to have a list of events and time until that event. Keep track of your busy life, This app allows you to note down events and activities and countdown the days until the event. Super simple but effective.</p>
-              <span>The list of features include:</span>
-              <ul>
-                  <li>Multiple List support</li>
-                  <li>Ordering of Events, both manually and automatically</li>
-                  <li>Editing of current event names</li>
-              </ul>
-
-              <a href="https://chrome.google.com/webstore/detail/days-until/gjoncaelhmjienakbbocmlceofcjpdlg?hl=en">Link</a>
-            </div>
-            <div class="col-lg-6 col-md-5">
-              <img class="img-fluid" src="./images/Daysuntil.png">
-            </div>
-            
-          </div>
-
-
-
-
-        </section>
-        <!-- section id="CV">
-                <div class="grid grid-pad">
-                    <div class="col-1-1 centre">
-                        <h2>Education</h2>
-                    </div>
-                    <div class="col-1-1">
-                        <div class="module seperator">
-                            <h3>University Of York</h3>
-                            <ul>
-                                <li>
-                                    Year 1: First overall
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="module seperator">
-                            <h3 class="">John Ferneley College: 2008 - 2013</h3>
-                            <ul>
-                                <li>6 GCSE's between A*-C</li>
-                                <li>Including A* in Maths</li>
-                            </ul>
-                        </div>
-                        <div class="module">
-                            <h3 class="">Melton Vale Post   16 centre: 2013 - 2015</h3>
-                            <ul>
-                                <li>A-Levels:
-                                    <ul>
-                                        <li>Maths: A*</li>
-                                        <li>Systems and Control: A</li>
-                                        <li>Further Maths: B</li>
-                                    </ul>
-                                </li>
-                                <li>AS-Levels:
-                                    <ul>
-                                        <li>Physics: B</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-            </div>
-
-    
-
-        </section-->
-        <footer>
-            
-        </footer>
-
-    </body>
 </html>
