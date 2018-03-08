@@ -1,10 +1,11 @@
 @font-face {
   font-family: 'brooklyn';
-  src: url('../font/brooklyn.eot?99014761');
-  src: url('../font/brooklyn.eot?99014761#iefix') format('embedded-opentype'),
-       url('../font/brooklyn.woff?99014761') format('woff'),
-       url('../font/brooklyn.ttf?99014761') format('truetype'),
-       url('../font/brooklyn.svg?99014761#brooklyn') format('svg');
+  src: url('../font/brooklyn.eot?23989818');
+  src: url('../font/brooklyn.eot?23989818#iefix') format('embedded-opentype'),
+       url('../font/brooklyn.woff2?23989818') format('woff2'),
+       url('../font/brooklyn.woff?23989818') format('woff'),
+       url('../font/brooklyn.ttf?23989818') format('truetype'),
+       url('../font/brooklyn.svg?23989818#brooklyn') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -14,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'brooklyn';
-    src: url('../font/brooklyn.svg?99014761#brooklyn') format('svg');
+    src: url('../font/brooklyn.svg?23989818#brooklyn') format('svg');
   }
 }
 */
@@ -56,4 +57,5 @@
  
 .icon-twitter:before { content: '\e800'; } /* '' */
 .icon-mail:before { content: '\e801'; } /* '' */
-.icon-github-circled:before { content: '\e802'; } /* '' */
+.icon-github-circled:before { content: '\f09b'; } /* '' */
+.icon-linkedin:before { content: '\f0e1'; } /* '' */
