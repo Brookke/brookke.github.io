@@ -1,0 +1,39 @@
+body {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    margin: 2rem 0;
+}
+
+header .profile-info {
+    padding-right: 2rem;
+    border-right: 5px solid black;
+}
+
+header .profile-info > .role {
+    margin-bottom: 0;
+}
+
+header .profile-overview > h2:first-of-type {
+    line-height: 2em;
+}
+
+header .profile-overview {
+    padding-left: 2rem;
+}
+
+ul.inline-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+ul.inline-list > li:not(:first-of-type)::before {
+    content: "\2022";
+    padding: 0 5px;
+}
