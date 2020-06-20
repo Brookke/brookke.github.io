@@ -10,9 +10,24 @@ header {
   margin: 2rem 0;
 }
 
+header h2 {
+  margin-bottom: 0;
+}
+header h1 {
+  margin-bottom: 0;
+}
+
+a {
+  color: blue;
+}
+
 header .profile-info {
   padding-right: 2rem;
   border-right: 5px solid black;
+}
+
+header .profile-info p {
+  margin-bottom: 0;
 }
 
 header .profile-info > .role {
@@ -33,7 +48,14 @@ ul.inline-list {
   padding: 0;
 }
 
-ul.inline-list > li:not(:last-of-type)::after {
+ul.inline-list > li:not(:last-of-type) {
+  padding-right: 10px;
+}
+
+ul.inline-list.separators > li:not(:last-of-type) {
+  padding-right: 0;
+}
+ul.inline-list.separators > li:not(:last-of-type)::after {
   content: "\2022";
   padding: 0 5px;
 }
