@@ -1,0 +1,50 @@
+@import "breakpoints";
+@import "utils";
+@import "colors";
+@import "typography";
+@import "list-utils";
+@import "header";
+
+$page-margin: 50px;
+$page-item-spacing: 100px;
+$section-padding-h: 30px;
+$page-margin-left: $profile-picture-spacing * 2 + $profile-picture-size -
+  $section-padding-h;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background-color);
+  max-width: 1500px;
+  margin: 100px auto;
+
+  > * {
+    margin-bottom: $page-item-spacing;
+  }
+}
+
+header {
+  margin-left: 50px;
+  margin-right: 50px;
+
+  @include for-tablet-portrait-up {
+    margin-left: 0;
+  }
+}
+
+section {
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 20px $section-padding-h;
+
+  @include for-tablet-landscape-up {
+    margin-left: $page-margin-left;
+  }
+}
+
+#about {
+  border: 5px solid var(--stroke-color);
+  background-color: white;
+}

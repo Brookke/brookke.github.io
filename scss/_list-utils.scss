@@ -1,0 +1,21 @@
+$inline-list-sepacing: 10px;
+
+ul.inline-list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+
+  > li:not(:last-of-type) {
+    padding-right: $inline-list-sepacing;
+  }
+
+  &.separators > li:not(:last-of-type) {
+    padding-right: 0;
+
+    &::after {
+      content: "\2022";
+      padding: 0 $inline-list-sepacing/2;
+    }
+  }
+}
