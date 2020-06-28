@@ -23,7 +23,6 @@ header {
   }
 
   .profile-body {
-    flex-shrink: 1;
     display: grid;
     grid-auto-flow: row;
     gap: 30px;
@@ -45,10 +44,6 @@ header {
       min-width: var(--stroke-thickness);
       min-height: var(--stroke-thickness);
       background-color: var(--stroke-color);
-    }
-
-    .profile-overview {
-      flex-grow: 1;
     }
   }
 }
