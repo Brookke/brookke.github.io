@@ -1,14 +1,14 @@
 @import "breakpoints";
-@import "utils";
-@import "colors";
+@import "theme";
 @import "typography";
 @import "list-utils";
 @import "header";
 
 $page-margin: 50px;
+$sectiom-padding-h: 30px;
 $page-item-spacing: 100px;
 $section-padding-h: 30px;
-$page-margin-left: $profile-picture-spacing * 2 + $profile-picture-size -
+$section-margin-left: $page-margin + $header-spacing + $profile-picture-size -
   $section-padding-h;
 
 * {
@@ -16,8 +16,9 @@ $page-margin-left: $profile-picture-spacing * 2 + $profile-picture-size -
 }
 
 body {
-  background: var(--background-color);
+  background: var(--page-background);
   max-width: 1500px;
+  width: 100%;
   margin: 100px auto;
 
   > * {
@@ -25,26 +26,31 @@ body {
   }
 }
 
+header,
+section {
+  @include for-tablet-portrait-up {
+    margin-left: $page-margin;
+    margin-right: $page-margin;
+  }
+}
+
 header {
-  margin-left: 50px;
-  margin-right: 50px;
+  padding: 0 $sectiom-padding-h;
 
   @include for-tablet-portrait-up {
-    margin-left: 0;
+    padding: 0 30px 0 0;
   }
 }
 
 section {
-  margin-left: 50px;
-  margin-right: 50px;
   padding: 20px $section-padding-h;
 
   @include for-tablet-landscape-up {
-    margin-left: $page-margin-left;
+    margin-left: $section-margin-left;
   }
 }
 
 #about {
-  border: 5px solid var(--stroke-color);
-  background-color: white;
+  border: var(--stroke-thickness) solid var(--stroke-color);
+  background: var(--card-background);
 }
