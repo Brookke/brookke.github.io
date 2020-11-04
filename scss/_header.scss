@@ -18,14 +18,14 @@ header {
     height: $profile-picture-size;
     width: $profile-picture-size;
     border-radius: 100%;
-    background-color: blue;
+    background-color: var(--stroke-color);
     border: var(--stroke-thickness) solid var(--stroke-color);
   }
 
   .profile-body {
     display: grid;
     grid-auto-flow: row;
-    gap: 30px;
+    gap: 50px;
 
     @include for-tablet-landscape-up {
       grid-auto-flow: column;
@@ -40,10 +40,29 @@ header {
     }
 
     .profile-separator {
-      align-self: stretch;
+      height: 100%;
       min-width: var(--stroke-thickness);
       min-height: var(--stroke-thickness);
       background-color: var(--stroke-color);
+      animation-name: example;
+      animation-duration: 1s;
     }
+  }
+}
+
+@keyframes example {
+  from {
+    height: 0;
+  }
+  to {
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
   }
 }
