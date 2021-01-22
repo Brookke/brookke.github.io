@@ -3,8 +3,8 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: local("Butler"), url("./fonts/Butler-Medium.woff2") format("woff2"),
-    url("./fonts/Butler-Medium.woff") format("woff");
+  src: local("Butler"), url("/stylesheets/fonts/Butler-Medium.woff2") format("woff2"),
+    url("/stylesheets/fonts/Butler-Medium.woff") format("woff");
 }
 
 body {
