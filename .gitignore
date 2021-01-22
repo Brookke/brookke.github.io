@@ -3,3 +3,5 @@ bootstrap/node_modules/*
 
 bootstrap/CHANGELOG.md
 
+.jekyll-cache
+_site

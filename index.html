@@ -1,3 +1,6 @@
+---
+---
+
 <!DOCTYPE html>
 <html lang="en-GB">
   <head>
@@ -11,7 +14,7 @@
       name="google-site-verification"
       content="rt53dnmciFFqyh_5cgSE9MuIYbirehIoiOCwlxYpKsg"
     />
-    <title>Brooke Hatton</title>
+    <title>{{ site.title }}</title>
     <link
       rel="preload"
       as="font"
@@ -19,15 +22,15 @@
       type="font/woff2"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="bootstrap-reboot.css" />
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="stylesheets/bootstrap-reboot.css" />
+    <link rel="stylesheet" href="stylesheets/style.css" />
   </head>
 
   <body>
-    <header>
-      <img src="./images/profile.jpg" alt="me smiling wearing a cap with a propeller attached" class="profile-img" />
-      <div class="profile-body">
-        <div class="profile-info">
+    <header class="profile-header">
+      <img src="./images/profile.jpg" alt="me smiling wearing a cap with a propeller attached" class="profile-header__img" />
+      <div class="profile-header__body">
+        <div class="profile-header__Info">
           <h1 class="no-bottom-spacing no-wrap">Brooke Hatton</h1>
           <p class="role no-bottom-spacing">Full Stack Developer</p>
           <p class="location">London, UK</p>
@@ -41,8 +44,8 @@
             </li>
           </ul>
         </div>
-        <div class="profile-separator"></div>
-        <div class="profile-overview">
+        <div class="profile-header__separator"></div>
+        <div class="profile-header__overview">
           <h2 class="no-bottom-spacing">Experience</h2>
           <ul class="inline-list separators">
             <li>Typescript</li>
@@ -58,7 +61,7 @@
         </div>
       </div>
     </header>
-    <section id="about">
+    <section class="profile-section" id="about">
       <h2>About Me</h2>
       <p>
         I am currently working at Morgan Stanley as a Full Stack Software
