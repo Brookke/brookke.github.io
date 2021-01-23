@@ -3,7 +3,6 @@ layout: post
 title: "Kitchen Knives"
 date: 2021-01-22 16:36:43 +0000
 categories: products
-permalink: kitchen-knives
 description: "My guide on what kitchen Knives to get. From the best value Victorinox Fibrox, to the high end Wusthof Ikon Classic."
 ---
 

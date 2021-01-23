@@ -5,30 +5,23 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="description"
-      content="{{ site.description }}"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="{{ site.description }}" />
+
     <meta
       name="google-site-verification"
       content="rt53dnmciFFqyh_5cgSE9MuIYbirehIoiOCwlxYpKsg"
     />
     <title>{{ site.title }}</title>
-    <link
-      rel="preload"
-      as="font"
-      href="./fonts/Butler-Medium.woff2"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="stylesheets/bootstrap-reboot.css" />
-    <link rel="stylesheet" href="stylesheets/style.css" />
+    {% include stylings.html %}
   </head>
 
   <body>
-    <header class="profile-header">
-      <img src="./images/profile.jpg" alt="me smiling wearing a cap with a propeller attached" class="profile-header__img" />
+    <header class="profile-header header--xl">
+      <img
+        src="./images/profile.jpg"
+        alt="me smiling wearing a cap with a propeller attached"
+        class="profile-header__img"
+      />
       <div class="profile-header__body">
         <div class="profile-header__Info">
           <h1 class="no-bottom-spacing no-wrap">Brooke Hatton</h1>
@@ -78,11 +71,14 @@
         the users at every stage of the process.
       </p>
     </section>
-    <!-- <section id="public-work">
-      <h2 class="full-width">Public Work</h2>
-      <p>
-        While most of my work is private, I have a couple of public projects.
-      </p>
+    <section class="profile-section" id="public-work">
+      <header class="public-work__header">
+        <h2 class="public-work__title full-width">Public Work</h2>
+        <p>
+          While most of my work is private, I have a couple of public projects.
+        </p>
+      </header>
+
       <article>
         <h3>University Radio York</h3>
         <p>
@@ -146,5 +142,6 @@
         </ul>
       </article>
     </section>
-  </body> -->
+    {% include footer.html %}
+  </body>
 </html>

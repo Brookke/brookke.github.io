@@ -3,7 +3,8 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: local("Butler"), url("/stylesheets/fonts/Butler-Medium.woff2") format("woff2"),
+  src: local("Butler"),
+    url("/stylesheets/fonts/Butler-Medium.woff2") format("woff2"),
     url("/stylesheets/fonts/Butler-Medium.woff") format("woff");
 }
 
@@ -27,11 +28,23 @@ h4 {
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 3rem;
+
+  &.heading--xl {
+    font-size: 5rem;
+  }
 }
 
 h2 {
-  font-size: 1.8em;
+  font-size: 2.2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.2rem;
 }
 
 .no-wrap {
@@ -76,8 +89,4 @@ h2 {
   from {
     width: 0;
   }
-}
-
-h1.large {
-  font-size: 5em;
 }

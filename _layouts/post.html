@@ -2,42 +2,28 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="description"
-      content="{{ page.description }}"
-    />
+    <meta name="description" content="{{ page.description }}" />
     <title>{{ page.title }}</title>
-    <link
-      rel="preload"
-      as="font"
-      href="/stylesheets/fonts/Butler-Medium.woff2"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/stylesheets/bootstrap-reboot.css" />
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    {% include stylings.html %}
   </head>
   <body>
-    <!-- <nav>
-      <a href="/">Home</a>
-    </nav> -->
-
+    {% include nav.html %}
     <article class="post">
-      <header class="post__header">
-        <h1 class="post__title large">{{ page.title }}</h1>
+      <header class="post__header header--xl">
+        <h1 class="post__title heading--xl">{{ page.title }}</h1>
         <div class="post__meta">
           <span>{{ page.date | date_to_string }}</span>
-          &#x2022;
+          {% unless page.categories == empty %} &#x2022;
           <ul class="inline-list separators">
-            {% for cat in page.categories %}
-            <li>{{cat}}</li>
+            {% for category in page.categories %}
+            <li>{{category | upcase }}</li>
             {% endfor %}
           </ul>
+          {% endunless %}
         </div>
       </header>
       <div class="post__content">{{ content }}</div>
     </article>
-    <footer>&copy; {{ site.owner }} - {{ page.date | date: "%Y" }}</footer>
+    {% include footer.html %}
   </body>
 </html>

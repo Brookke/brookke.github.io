@@ -1,4 +1,4 @@
-$inline-list-sepacing: 10px;
+$inline-list-spacing: 1rem;
 
 ul.inline-list {
   display: inline-flex;
@@ -7,7 +7,7 @@ ul.inline-list {
   padding: 0;
 
   > li:not(:last-of-type) {
-    padding-right: $inline-list-sepacing;
+    padding-right: $inline-list-spacing;
   }
 
   &.separators > li:not(:last-of-type) {
@@ -15,7 +15,13 @@ ul.inline-list {
 
     &::after {
       content: "\2022";
-      padding: 0 $inline-list-sepacing/2;
+      padding: 0 $inline-list-spacing/2;
     }
   }
+}
+
+.no-list-style {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
 }
