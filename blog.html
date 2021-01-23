@@ -21,7 +21,7 @@
       <header class="page__header header--xl">
         <h1 class="heading--xl">Blog</h1>
       </header>
-      <div class="page__content">
+      <section class="page__content">
         <ol class="post-list no-list-style">
           {% for post in site.posts %}
           <li class="post-item">
@@ -42,7 +42,7 @@
           </li>
           {% endfor %}
         </ol>
-      </div>
+      </section>
     </main>
     {% include footer.html %}
   </body>
