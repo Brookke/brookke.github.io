@@ -9,7 +9,7 @@ $profile-picture-size: 130px;
   gap: 2.5rem;
 
   @include for-tablet-portrait-up {
-    gap: 5rem;
+    gap: 4rem;
     justify-content: start;
     grid-auto-flow: column;
   }
@@ -29,6 +29,9 @@ $profile-picture-size: 130px;
 
     @include for-tablet-landscape-up {
       grid-auto-flow: column;
+    }
+    @include for-desktop-up {
+      gap: 5rem;
     }
   }
 
