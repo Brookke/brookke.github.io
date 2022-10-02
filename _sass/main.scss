@@ -5,6 +5,7 @@
 @import "list-utils";
 @import "home";
 @import "pages";
+@import "code-theme";
 
 * {
   box-sizing: border-box;
@@ -30,6 +31,12 @@ nav {
   }
 }
 
+section {
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 header.header--xl {
   padding: 5rem 0;
 }
@@ -39,7 +46,6 @@ article {
   padding: $section-padding-v $section-padding-h;
   margin-bottom: 6rem;
 }
-
 section > header,
 section > article {
   margin-left: 0;
@@ -51,6 +57,37 @@ section > article {
 
 nav {
   padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: -4rem;
+
+    &__image {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      background-color: var(--stroke-color);
+      border: calc(var(--stroke-thickness) / 1.5) solid var(--stroke-color);
+    }
+    &__name {
+      margin-bottom: 0;
+      line-height: 0;
+      font-size: 2rem;
+    }
+  }
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    flex-wrap: wrap;
+    margin: 0.6rem 0 0.3rem;
+    font-size: 1.1rem;
+    gap: 1rem;
+  }
 }
 
 footer {
