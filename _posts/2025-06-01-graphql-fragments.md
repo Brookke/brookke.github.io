@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GraphQL Fragments: Why are they useful?"
-date: 2025-04-25 09:00:00 +0100
+date: 2025-01-01 22:07:00 +0100
 categories: Engineering
 hidden: true
 ---
@@ -120,7 +120,7 @@ const Book = () => {
 export default Book;
 ```
 
-## Requrements change
+## Requirements change
 
 A few weeks later, the product team asks you to show book availability and estimated ship date in PriceInfo. That’s a reasonable request, but now this component needs more data, and **you have to update every query that uses it.**
 
