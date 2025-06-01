@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GraphQL Fragments: Why are they useful?"
-date: 2025-01-01 22:07:00 +0100
+date: 2025-06-01 22:07:00 +0100
 categories: Engineering
 hidden: true
 ---
