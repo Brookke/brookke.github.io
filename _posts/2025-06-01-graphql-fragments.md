@@ -6,12 +6,16 @@ categories: Engineering
 hidden: true
 ---
 
-Imagine you're building a bookstore website. The first page you make is the list of books. The page consists of the books, each with a title, author, description, price, and availability. You also have a button to add the book to the basket.
+As your app grows, you'll often reuse the same component across multiple pages—and each of those pages might query the same fields. Manually keeping those queries in sync is painful and error-prone. This is where GraphQL fragments shine.
 
-So you write a single query that fetches all the data you need for the entire page, and you pass that data down to each component.
+## A Bookstore example
+
+Imagine you're building a bookstore website. The first page you make is the list of books, a list of titles, authors, descriptions, prices, availabilities, and an add to basket button.
+
+To render it, you fetch all the data up front and pass it down to components:
 
 ```tsx
-// queries/BookListPage.ts
+// pages/Books.ts
 import { graphql } from "../gql";
 
 export const BookListQuery = graphql(`
@@ -27,9 +31,10 @@ export const BookListQuery = graphql(`
   }
 `);
 
-const BookListPage = () => {
+const BookList = () => {
   const { data } = useQuery(BookListQuery);
 
+  // TODO: Handle loading and error states
   if (!data) return null;
 
   return (
@@ -56,16 +61,21 @@ const PriceInfo = ({ price, inBasket }) => (
     <button disabled={inBasket}>Add to basket</button>
   </div>
 );
+
+export default BookList;
 ```
 
-This works great so far. Next you add a new page that shows the details of a single book. The page has a similar structure as the `BookCard` component, but it also includes a list of reviews and related books.
+A bit later, you add a page to show details for a single book. You reuse the `PriceInfo` component:
 
 ```tsx
-// queries/BookPage.ts
+// pages/book/[id].ts
 import { graphql } from "../gql";
+import { useRouter } from "next/router";
+import { useQuery } from "@apollo/client";
+import { PriceInfo } from "@/components/PriceInfo";
 
-export const BookPageQuery = graphql(`
-  query BookPage($id: ID!) {
+export const BookQuery = graphql(`
+  query Book($id: ID!) {
     book(id: $id) {
       id
       title
@@ -85,9 +95,12 @@ export const BookPageQuery = graphql(`
   }
 `);
 
-const BookPage = ({ id }) => {
+const Book = () => {
+  const router = useRouter();
+  const { id } = router.query;
   const { data } = useQuery(BookPageQuery, { variables: { id } });
 
+  // TODO: Handle loading and error states
   if (!data?.book) return null;
 
   const book = data.book;
@@ -103,22 +116,34 @@ const BookPage = ({ id }) => {
     </div>
   );
 };
+
+export default Book;
 ```
 
-So far so good, you keep expanding the app, adding new pages and components. But soon you find yourself needing to extend the `PriceInfo` component to show the availability of the book and an estimated ship date.
+## Requrements change
 
-You have two options:
+A few weeks later, the product team asks you to show book availability and estimated ship date in PriceInfo. That’s a reasonable request, but now this component needs more data, and **you have to update every query that uses it.**
 
-1. Find all the pages that use the `PriceInfo` component and update the query to include the new fields. This is tedious and hard to maintain, especially if you have a lot of pages that use the same component. You also run the risk of breaking something if you forget to update one of the queries.
-2. Make the component fetch the data itself — this makes the component less reusable, harder to test, and makes the page slower because it has to make multiple requests.
+You have two _bad_ options:
 
-### This Is Where Fragments Help
+1. **Update every query manually** to include the new fields. Tedious, fragile, and easy to get wrong.
+2. **Make the component fetch data itself**. That hurts testability, slows down the page, and breaks your clean data flow.
 
-Rather than repeating the same field list in every query, you can define a fragment for the `PriceInfo` component — and importantly, you define the fragment **next to the component** that uses it.
+Theres a better way...
 
-Using [GraphQL Code Generator](https://the-guild.dev/graphql/codegen) with `@graphql-codegen/client-preset`, we’ll define fragments and operations using the `graphql()` tagged function, and [fragment masking](https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#fragment-masking) to ensure type safety.
+### GraphQL Fragments
 
-Here's how it looks:
+Rather than repeating the same fields in every query, you can define a fragment for the `PriceInfo` component — and importantly, you define the fragment **next to the component** that uses it.
+
+I'm using [GraphQL Code Generator](https://the-guild.dev/graphql/codegen) with the [`@graphql-codegen/client-preset`](https://the-guild.dev/graphql/codegen/plugins/presets/preset-client), which gives:
+
+- The `graphql()` tag for operations and fragments
+- [Fragment masking](https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#fragment-masking) for strict type safety
+- Fully typed components, queries, and fragments
+
+But, you can adapt this pattern to your own setup if you're not using the guilds client codegen preset.
+
+Here’s how it looks:
 
 ```tsx
 // components/PriceInfo.tsx
@@ -157,11 +182,12 @@ export const PriceInfo = ({ book }: Props) => {
 };
 ```
 
-Now, your queries can spread the fragment whenever the `PriceInfo` component is used, ensuring that it always has the data it needs without duplicating field definitions.
+Now any page using PriceInfo just needs to spread the fragment:
 
 ```tsx
 // queries/BookListPage.ts
 import { graphql } from '../gql';
+...
 
 export const BookListQuery = graphql(`
   query BookListPage {
@@ -170,6 +196,7 @@ export const BookListQuery = graphql(`
       title
       author
       description
+
       ...PriceInfo
     }
   }
@@ -181,6 +208,7 @@ export const BookListQuery = graphql(`
 ```tsx
 // queries/BookPage.ts
 import { graphql } from '../gql';
+...
 
 export const BookPageQuery = graphql(`
   query BookPage($id: ID!) {
@@ -189,7 +217,9 @@ export const BookPageQuery = graphql(`
       title
       author
       description
+
       ...PriceInfo
+
       reviews {
         rating
         comment
@@ -205,14 +235,14 @@ export const BookPageQuery = graphql(`
 ...
 ```
 
-### Why This Pattern Works Well
+### Why This Pattern Works
 
 With this setup:
 
-- Fragments are colocated with the components that use them.
-- Fragment masking ensures that components only access the fields declared in their fragment.
-- Codegen keeps everything typesafe and consistent.
+- ✅ Fragments are colocated with the components that use them.
+- ✅ Fragment masking ensures that components only access the fields declared in their fragment.
+- ✅ Codegen keeps everything typesafe and consistent.
 
-This is a clean, scalable pattern that scales beautifully as your app grows.
+Your components define **what data they need**, and pages simply provide it.
 
-Next time you find yourself copying the same fields between queries, reach for a fragment—and put it where it belongs: **next to the component that needs it.**
+Next time you find yourself copying the same fields between queries, stop. Reach for a fragment and put it where it belongs: **next to the component that needs it.**
