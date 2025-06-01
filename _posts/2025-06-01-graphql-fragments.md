@@ -185,7 +185,7 @@ export const PriceInfo = ({ book }: Props) => {
 Now any page using PriceInfo just needs to spread the fragment:
 
 ```tsx
-// queries/BookListPage.ts
+// pages/Books.tsx
 import { graphql } from '../gql';
 ...
 
@@ -206,7 +206,7 @@ export const BookListQuery = graphql(`
 ```
 
 ```tsx
-// queries/BookPage.ts
+// pages/book/[id].tsx
 import { graphql } from '../gql';
 ...
 
