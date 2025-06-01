@@ -3,7 +3,7 @@ layout: post
 title: "GraphQL Fragments: Why are they useful?"
 date: 2025-04-25 09:00:00 +0100
 categories: Engineering
-published: false
+hidden: true
 ---
 
 Imagine you're building a bookstore website. The first page you make is the list of books. The page consists of the books, each with a title, author, description, price, and availability. You also have a button to add the book to the basket.
