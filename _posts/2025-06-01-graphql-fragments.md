@@ -6,7 +6,7 @@ categories: Engineering
 hidden: true
 ---
 
-As your app grows, you'll often reuse the same component across multiple pages—and each of those pages might query the same fields. Manually keeping those queries in sync is painful and error-prone. This is where GraphQL fragments shine.
+As your app grows, you'll often reuse the same component across multiple pages and each of those pages might query the same fields. Manually keeping those queries in sync is painful and error-prone. This is where GraphQL fragments shine.
 
 ## A Bookstore example
 
@@ -133,7 +133,7 @@ Theres a better way...
 
 ### GraphQL Fragments
 
-Rather than repeating the same fields in every query, you can define a fragment for the `PriceInfo` component — and importantly, you define the fragment **next to the component** that uses it.
+Rather than repeating the same fields in every query, you can define a fragment for the `PriceInfo` component - and importantly, you define the fragment **next to the component** that uses it.
 
 I'm using [GraphQL Code Generator](https://the-guild.dev/graphql/codegen) with the [`@graphql-codegen/client-preset`](https://the-guild.dev/graphql/codegen/plugins/presets/preset-client), which gives:
 
