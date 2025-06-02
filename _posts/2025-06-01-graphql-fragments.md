@@ -74,7 +74,7 @@ import { useRouter } from "next/router";
 import { useQuery } from "@apollo/client";
 import { PriceInfo } from "@/components/PriceInfo";
 
-export const BookQuery = graphql(`
+export const BookPageQuery = graphql(`
   query Book($id: ID!) {
     book(id: $id) {
       id
@@ -98,7 +98,7 @@ export const BookQuery = graphql(`
 const Book = () => {
   const router = useRouter();
   const { id } = router.query;
-  const { data } = useQuery(BookQuery, { variables: { id } });
+  const { data } = useQuery(BookPageQuery, { variables: { id } });
 
   // TODO: Handle loading and error states
   if (!data?.book) return null;
@@ -127,13 +127,13 @@ A few weeks later, the product team asks you to show book availability and the e
 You have two _bad_ options:
 
 1. **Update every query manually** to include the new fields. Tedious, fragile, and easy to get wrong.
-2. **Make the component fetch data itself**. That hurts testability, slows down the page, and breaks your clean data flow.
+2. **Make the component fetch data itself.** That hurts testability, slows down the page, and breaks your clean data flow.
 
 There’s a better way...
 
 ## GraphQL Fragments
 
-Rather than repeating the same fields in every query, you can define a fragment for the `PriceInfo` component - and importantly, you define the fragment **next to the component** that uses it.
+Rather than repeating the same fields in every query, you can define a fragment for the `PriceInfo` component — and importantly, you define the fragment **next to the component** that uses it.
 
 I'm using [GraphQL Code Generator](https://the-guild.dev/graphql/codegen) with the [`@graphql-codegen/client-preset`](https://the-guild.dev/graphql/codegen/plugins/presets/preset-client), which provides:
 
@@ -209,7 +209,7 @@ export const BookListQuery = graphql(`
 import { graphql } from "../gql";
 ...
 
-export const BookQuery = graphql(`
+export const BookPageQuery = graphql(`
   query Book($id: ID!) {
     book(id: $id) {
       id
@@ -235,12 +235,16 @@ export const BookQuery = graphql(`
 
 ## Why This Pattern Works
 
-With this setup:
+- ✅ **Colocated data requirements.**
+  Fragments live next to the components that use them, so it’s clear what data each component needs.
 
-- ✅ Fragments are colocated with the components that use them.
-- ✅ Fragment masking ensures that components only access the fields declared in their fragment.
-- ✅ Codegen keeps everything type-safe and consistent.
+- ✅ **Safe, minimal refactors.**
+  Update the fragment in one place when requirements change — without touching every query.
 
-Your components define **what data they need**, and pages simply provide it.
+- ✅ **Avoids overfetching.**
+  Fragments limit components to only the fields they declare, preventing unused fields from lingering after refactors.
 
-Next time you find yourself copying the same fields between queries, stop. Reach for a fragment and put it where it belongs: **next to the component that needs it.**
+- ✅ **Encourages modular components.**
+  Components define their own data contract, making them easier to reuse, test, and maintain.
+
+Next time you find yourself copying the same fields between queries for a component, stop. Create a fragment and put it where it belongs: **next to the component that needs it.**
