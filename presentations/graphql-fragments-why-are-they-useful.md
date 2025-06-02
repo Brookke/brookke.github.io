@@ -245,13 +245,25 @@ export const BookPageQuery = graphql(`
 
 ## Why This Pattern Works
 
-✅ Fragments are colocated with the components that use them.
-
-✅ Fragment masking enforces strict typing and usage.
-
-✅ Codegen ensures your fragments and queries stay consistent.
+- ✅ **Colocated data requirements.**
 
 <!-- pause -->
+<!-- speaker_note: Fragments live next to the components that use them, so it’s clear what data each component needs. -->
+
+- ✅ **Safe, minimal refactors.**
+
+<!-- pause -->
+<!-- speaker_note: Update the fragment in one place when requirements change — without touching every query. -->
+
+- ✅ **Avoids overfetching.**
+
+<!-- pause -->
+<!-- speaker_note: Fragments limit components to only the fields they declare, preventing unused fields from lingering after refactors. -->
+
+- ✅ **Encourages modular components.**
+
+<!-- pause -->
+<!-- speaker_note: Components define their own data contract, making them easier to reuse, test, and maintain. -->
 
 The result?
 
