@@ -9,7 +9,7 @@ As your app grows, you'll often reuse the same component across multiple pages a
 
 ## A Bookstore Example
 
-Imagine you're building a bookstore website. The first page you make is a list of books, showing titles, authors, descriptions, prices, availability, and an "Add to Basket" button.
+Imagine you're building a bookstore website. The first page you create is a list of books, showing the title, author, description, and **price info**, including availability and an "add to basket" option.
 
 To render it, you fetch all the data up front and pass it down to components:
 
