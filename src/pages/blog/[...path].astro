@@ -1,0 +1,61 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navigation from "../../components/Navigation.astro";
+import Footer from "../../components/Footer.astro";
+import { generateJekyllSlug } from "../../utils/jekyll-urls";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => {
+    const jekyllSlug = generateJekyllSlug(
+      post.data.title,
+      post.data.categories,
+    );
+    return {
+      params: { path: jekyllSlug },
+      props: post,
+    };
+  });
+}
+
+const post = Astro.props;
+const { Content } = await post.render();
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+---
+
+<BaseLayout title={post.data.title} description={post.data.description}>
+  <Navigation />
+  <article class="post">
+    <header class="post__header header--xl">
+      <h1 class="post__title heading--xl">{post.data.title}</h1>
+      <div class="post__meta">
+        <span>{formatDate(post.data.date)}</span>
+        {
+          post.data.categories && post.data.categories.length > 0 && (
+            <>
+              &#x2022;
+              <ul class="inline-list separators">
+                {post.data.categories.map((category) => (
+                  <li>{category.toUpperCase()}</li>
+                ))}
+              </ul>
+            </>
+          )
+        }
+      </div>
+    </header>
+    <div class="post__content">
+      <Content />
+    </div>
+  </article>
+  <Footer />
+</BaseLayout>
+

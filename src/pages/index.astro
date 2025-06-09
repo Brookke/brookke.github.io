@@ -1,0 +1,77 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostList from "../components/PostList.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout title="Brooke Hatton">
+  <header class="profile-header header--xl">
+    <img
+      src="./images/profile.jpg"
+      alt="me smiling wearing a cap with a propeller attached"
+      class="profile-header__img"
+    />
+    <div class="profile-header__body">
+      <div class="profile-header__Info">
+        <h1 class="no-bottom-spacing no-wrap">Brooke Hatton</h1>
+        <p class="role no-bottom-spacing">Full Stack Developer</p>
+        <p class="location">London, UK</p>
+        <ul class="inline-list contact-links">
+          <li><a href="mailto:hatton.brooke@me.com" rel="me">Email</a></li>
+          <li><a href="https://github.com/Brookke" rel="me">Github</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/brooke-h-68374895" rel="me">
+              LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="profile-header__separator"></div>
+      <div class="profile-header__overview">
+        <h2 class="no-bottom-spacing">Experience</h2>
+        <ul class="inline-list separators">
+          <li>Typescript</li>
+          <li>CSS</li>
+          <li>HTML</li>
+          <li>React</li>
+          <li>Go</li>
+          <li>Java</li>
+        </ul>
+
+        <h2 class="no-bottom-spacing">Education</h2>
+        <p>1st Class Honours, BEng Computer Science, University Of York</p>
+      </div>
+    </div>
+  </header>
+  <section class="profile-section" id="about">
+    <h2>👋 Hey there</h2>
+    <p>
+      I'm Brooke! I'm currently working at
+      <a href="https://ravio.com">Ravio</a> as a Senior Software Engineer. I love
+      making things that make people's lives easier and that are delightful to use.
+      Some of my recent projects I've been involved in include:
+    </p>
+    <ul>
+      <li>
+        <a href="https://ravio.com/bands">Salary Bands</a> - Lifts the tables of
+        numbers out of the excel sheets into a beautiful UI that is a delight to
+        use
+      </li>
+      <li>
+        <a href="https://ravio.com/pay-equity">Pay Equity</a> - Highlights and visualises
+        crucial insights to enable companies to make real pay equity progress
+      </li>
+    </ul>
+    <p>
+      This site is a place for me to share the things I have learned, the things
+      I am working on (both in and out of work) and the things I am excited
+      about. Thanks for stopping by!
+    </p>
+  </section>
+  <section>
+    <h2>Posts</h2>
+    <PostList />
+  </section>
+  <Footer />
+</BaseLayout>
+
