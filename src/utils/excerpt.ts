@@ -1,5 +1,5 @@
 import MarkdownIt from "markdown-it";
-import { convert, HtmlToTextOptions } from "html-to-text";
+import { convert, type HtmlToTextOptions } from "html-to-text";
 const parser = new MarkdownIt();
 
 export const createExcerpt = (body: string): string => {
@@ -13,7 +13,6 @@ export const createExcerpt = (body: string): string => {
   };
 
   const text = convert(html, options);
-  console.log(text);
   const distilled = convert(text, options);
 
   return distilled;

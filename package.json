@@ -5,14 +5,16 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.1",
-    "astro": "^4.0.0",
-    "sass": "^1.89.1"
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/rss": "^4.0.12",
+    "astro": "^5.9.2",
+    "sass": "^1.89.1",
+    "typescript": "^5.8.3"
   },
   "devDependencies": {
     "@types/html-to-text": "^9.0.4",
