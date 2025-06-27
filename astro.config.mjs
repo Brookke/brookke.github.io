@@ -8,4 +8,10 @@ export default defineConfig({
       wrap: false,
     },
   },
+  redirects: {
+    "/blog/engineering/graphql-fragments": {
+      status: 302,
+      destination: "/blog/engineering/graphql-fragments-why-are-they-useful",
+    },
+  },
 });
