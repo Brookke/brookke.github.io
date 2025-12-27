@@ -9,8 +9,8 @@ const {
   description = "Brooke Hatton, Full Stack Developer. 1st Class Honours, BEng Computer Science, University Of York.",
 } = Astro.props;
 
-// Import the main stylesheet
-import "../styles/style.scss";
+// Import the global stylesheet
+import "../styles/global.css";
 ---
 
 <!doctype html>
@@ -32,12 +32,8 @@ import "../styles/style.scss";
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="/stylesheets/bootstrap-reboot.css" />
   </head>
   <body>
     <slot />
   </body>
 </html>
-

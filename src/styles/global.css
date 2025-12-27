@@ -1,0 +1,204 @@
+/* Import CSS Reset */
+@import "./reset.css";
+
+/* ============================================
+   CSS CUSTOM PROPERTIES (Theme Variables)
+   ============================================ */
+
+:root {
+  --headings-color: #272343;
+  --body-color: #2d334a;
+
+  --button-background: #bae8e8;
+  --page-background: rgb(250, 250, 250);
+  --card-background: #ffffff;
+
+  --stroke-color: #272343;
+  --stroke-thickness: 2px;
+
+  --link-color: rgb(26 110 233);
+
+  --section-padding-h: 2rem;
+  --section-padding-v: 1.5rem;
+}
+
+/* ============================================
+   GLOBAL BASE STYLES
+   ============================================ */
+
+body {
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  color: var(--body-color);
+  background: var(--page-background);
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Newsreader", serif;
+  font-optical-sizing: auto;
+  color: var(--headings-color);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+p,
+ul,
+ol ul {
+  margin-bottom: 1.5rem;
+}
+
+a {
+  color: var(--link-color);
+}
+
+blockquote {
+  background: #b8b8b81c;
+  border-left: 5px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+}
+
+blockquote:before {
+  color: #ccc;
+  content: "\201C";
+  font-size: 3em;
+  line-height: 0.1em;
+  margin-right: 0.1em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  display: inline;
+}
+
+blockquote cite {
+  display: block;
+  color: #333333;
+  font-style: normal;
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+/* Code blocks from markdown */
+.astro-code {
+  padding: 1rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  border-radius: 0.5rem;
+}
+
+/* ============================================
+   UTILITY CLASSES (truly reusable)
+   ============================================ */
+
+.no-bottom-spacing {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.no-list-style {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.inline-list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+
+  & > li:not(:last-of-type) {
+    padding-right: 1rem;
+  }
+
+  &.separators > li:not(:last-of-type) {
+    padding-right: 0;
+
+    &::after {
+      content: "\2022";
+      padding: 0 0.5rem;
+    }
+  }
+}
+
+.heading--xl {
+  font-size: 3.5rem;
+}
+
+@media (min-width: 600px) {
+  .heading--xl {
+    font-size: 4.5rem;
+  }
+}
+
+.header--xl {
+  padding: 5rem 0;
+}
+
+/* Decorative line utility */
+.full-width {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  align-content: center;
+  justify-content: center;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    align-self: center;
+    height: var(--stroke-thickness);
+    width: 50%;
+    animation-name: animate-in-stroke;
+    animation-duration: 1s;
+    background: var(--stroke-color);
+    margin-left: 50px;
+  }
+
+  &::before {
+    content: "";
+    display: inline-block;
+    align-self: center;
+    height: var(--stroke-thickness);
+    justify-self: center;
+    width: 50%;
+    animation-name: animate-in-stroke;
+    animation-duration: 1s;
+    margin-right: 50px;
+    background: var(--stroke-color);
+  }
+}
+
+@keyframes animate-in-stroke {
+  from {
+    width: 0;
+  }
+}

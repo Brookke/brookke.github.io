@@ -75,3 +75,107 @@ import Footer from "../components/Footer.astro";
   <Footer />
 </BaseLayout>
 
+<style>
+  header, section {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  @media (min-width: 600px) {
+    header, section {
+      margin-left: 5rem;
+      margin-right: 5rem;
+    }
+  }
+
+  section {
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: var(--section-padding-v) var(--section-padding-h);
+    margin-bottom: 6rem;
+  }
+
+  /* Profile Header Styles */
+  .profile-header {
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-columns: minmax(auto, max-content);
+    justify-content: center;
+    justify-items: center;
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 600px) {
+    .profile-header {
+      gap: 4rem;
+      justify-content: start;
+      grid-auto-flow: column;
+    }
+  }
+
+  .profile-header__img {
+    height: 130px;
+    width: 130px;
+    border-radius: 100%;
+    background-color: var(--stroke-color);
+    border: var(--stroke-thickness) solid var(--stroke-color);
+  }
+
+  .profile-header__body {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 3rem;
+  }
+
+  @media (min-width: 900px) {
+    .profile-header__body {
+      grid-auto-flow: column;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .profile-header__body {
+      gap: 5rem;
+    }
+  }
+
+  .profile-header__Info {
+    text-align: center;
+  }
+
+  @media (min-width: 600px) {
+    .profile-header__Info {
+      text-align: left;
+    }
+  }
+
+  .profile-header__separator {
+    height: 100%;
+    min-width: var(--stroke-thickness);
+    min-height: var(--stroke-thickness);
+    background-color: var(--stroke-color);
+    animation-name: animate-in-height;
+    animation-duration: 1s;
+  }
+
+  @keyframes animate-in-height {
+    from {
+      height: 0;
+    }
+  }
+
+  /* Profile Section (About Card) */
+  .profile-section#about {
+    border: var(--stroke-thickness) solid var(--stroke-color);
+    background: var(--card-background);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    animation: animate-in-shadow 1s;
+  }
+
+  @keyframes animate-in-shadow {
+    from {
+      box-shadow: none;
+    }
+  }
+</style>

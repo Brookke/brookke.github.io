@@ -5,7 +5,7 @@ import { createExcerpt } from "../utils/excerpt";
 
 const posts = await getCollection("blog");
 const sortedPosts = posts.sort(
-  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
 );
 
 function formatDate(date: Date): string {
@@ -24,7 +24,7 @@ const postsWithExcerpts = await Promise.all(
       slug: getJekyllUrl(post.data.title, post.data.categories),
       excerpt: post.data.description ?? createExcerpt(post.body),
     };
-  })
+  }),
 );
 ---
 
@@ -53,3 +53,18 @@ const postsWithExcerpts = await Promise.all(
     ))
   }
 </ol>
+
+<style>
+  .post-item {
+    margin-bottom: 3rem;
+  }
+
+  .post-item__title {
+    margin-bottom: 0;
+    line-height: 1;
+  }
+
+  .post-item__meta > * {
+    margin-bottom: 0;
+  }
+</style>

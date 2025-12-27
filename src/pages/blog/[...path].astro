@@ -58,3 +58,29 @@ function formatDate(date: Date): string {
   </article>
   <Footer />
 </BaseLayout>
+
+<style>
+  article {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: var(--section-padding-v) var(--section-padding-h);
+    margin-bottom: 6rem;
+  }
+
+  @media (min-width: 600px) {
+    article {
+      margin-left: 5rem;
+      margin-right: 5rem;
+    }
+  }
+
+  .post__header {
+    text-align: center;
+  }
+
+  .post__content {
+    max-width: 51rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
