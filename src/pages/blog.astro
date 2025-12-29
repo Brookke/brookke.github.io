@@ -6,7 +6,9 @@ import { getCollection } from "astro:content";
 import { getJekyllUrl } from "../utils/jekyll-urls";
 import { createExcerpt } from "../utils/excerpt";
 
-const posts = await getCollection("blog");
+const posts = await getCollection("blog", ({ data }) => {
+  return import.meta.env.PROD ? data.draft !== true : true;
+});
 const sortedPosts = posts.sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
 );
@@ -69,13 +71,15 @@ const postsWithExcerpts = await Promise.all(
 </BaseLayout>
 
 <style>
-  header, section {
+  header,
+  section {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
   }
 
   @media (min-width: 600px) {
-    header, section {
+    header,
+    section {
       margin-left: 5rem;
       margin-right: 5rem;
     }

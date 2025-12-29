@@ -3,7 +3,9 @@ import { getCollection } from "astro:content";
 import { getJekyllUrl } from "../../utils/jekyll-urls";
 
 export async function GET(context) {
-  const posts = await getCollection("blog");
+  const posts = await getCollection("blog", ({ data }) => {
+    return import.meta.env.PROD ? data.draft !== true : true;
+  });
   const sortedPosts = posts.sort(
     (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
   );

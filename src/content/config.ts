@@ -13,6 +13,7 @@ const blog = defineCollection({
         return val || [];
       }),
     description: z.string().optional(),
+    draft: z.boolean().optional().default(false),
   }),
 });
 
