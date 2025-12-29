@@ -9,6 +9,7 @@ interface STLModelProps {
   rotationX?: number;
   rotationY?: number;
   rotationZ?: number;
+  color?: string;
 }
 
 function STLModel({
@@ -16,6 +17,7 @@ function STLModel({
   rotationX = 0,
   rotationY = 0,
   rotationZ = 0,
+  color = "#a9a9a9ff",
 }: STLModelProps) {
   const [geometry, setGeometry] = useState<THREE.BufferGeometry | null>(null);
 
@@ -46,7 +48,7 @@ function STLModel({
         receiveShadow
       >
         <meshStandardMaterial
-          color={"#a9a9a9ff"}
+          color={color}
           roughness={0.35}
           metalness={0.0}
           envMapIntensity={0.3}
@@ -67,6 +69,7 @@ export interface Props {
   rotationY?: number;
   rotationZ?: number;
   className?: string;
+  color?: string;
 }
 
 export default function STLViewer({
@@ -80,6 +83,7 @@ export default function STLViewer({
   rotationY = 0,
   rotationZ = 0,
   className,
+  color = "#a9a9a9ff",
 }: Props) {
   return (
     <div
@@ -113,6 +117,7 @@ export default function STLViewer({
             rotationX={rotationX}
             rotationY={rotationY}
             rotationZ={rotationZ}
+            color={color}
           />
         </Suspense>
 

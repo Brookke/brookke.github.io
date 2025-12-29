@@ -1,0 +1,219 @@
+---
+title: "A Year of 3D Printing"
+date: 2025-12-27 16:10:00 +0100
+categories: Making
+description: "Reflections on a year of functional 3D printing with the Bambu A1 Mini, from custom hooks to replacement parts."
+draft: true
+---
+
+import STLViewer from "../../components/STLViewer.tsx";
+import STLPileViewer from "../../components/STLPileViewer.tsx";
+
+If you'd asked me a few years back if I thought I'd buy a 3D printer, I would have said no. My experience of 3D printing back when I was in college was that they were very slow, expensive, frequently failed mid-print, and needed constant calibration.
+
+At the beginning of 2025 I bought myself a [Bambu A1 Mini](https://uk.store.bambulab.com/products/a1-mini) printer. What changed? Most of the problems I encountered in college have now been solved, and more importantly, at a price point that feels reasonable. The A1 Mini cost £149, comes with built-in bed leveling and flow rate calibration, and it just works. The printer is compact too, which was an important given we live in a small London flat.
+
+My general philosophy when buying this printer was that I wanted to use it to print useful and functional things. I didn't want to fill the house with a bunch of useless plastic that would end up in landfill before long. A year on, I think I've largely stuck to that principle.
+
+So onto the fun stuff: what have I printed?
+
+<STLPileViewer
+  client:visible
+  className="viewer-full-width"
+  enableReset={false}
+  models={[
+    { url: "/models/brooke/maisie-hook.stl", scale: 0.01, quantity: 3 },
+    { url: "/models/brooke/family-figures-box.stl", scale: 0.01, quantity: 1 },
+    { url: "/models/brooke/helmet-hook.stl", scale: 0.01, quantity: 4 },
+    { url: "/models/brooke/airer-foot.stl", scale: 0.01, quantity: 3 },
+    { url: "/models/brooke/ortlieb-webbing.stl", scale: 0.01, quantity: 3 },
+    { url: "/models/other/bottle-cage.stl", scale: 0.01, quantity: 2 },
+    {url: "/models/brooke/dehumidifier-cable-wrap.stl", scale: 0.01, quantity: 1},
+    {url: "/models/other/map.stl", scale: 0.01, quantity: 1},
+    {url: "/models/other/ikea-raskog.stl", scale: 0.01, quantity: 1},
+    {url: "/models/other/apple-watch-stand.stl", scale: 0.01, quantity: 1},
+
+]}
+height="800px"
+backgroundColor="rgba(0,0,0,0)"
+/>
+
+## Apple Watch stand
+
+<STLViewer
+  client:visible
+  modelPath="/models/other/apple-watch-stand.stl"
+  height="400px"
+  rotationX={Math.PI * 1.5}
+
+cameraDistance={200}
+/>
+[MarcusP - Printables](https://www.printables.com/model/3464-apple-watch-stand)
+
+I printed this for my partner Maisie's mum who wanted somewhere more permanent to charge and store her Apple Watch charger. This stand holds the charger in place and keeps it all tidy on the bedside table.
+
+## Gifts
+
+I've printed a few personalized gifts throughout the year:
+
+
+
+**Topographic maps** of meaningful locations make for thoughtful presents. I printed a few of these for friends and family, showing places they've lived or traveled to.
+<STLViewer
+  client:visible
+  modelPath="/models/other/map.stl"
+  height="500px"
+  rotationX={Math.PI * 1.5}
+  rotationZ={Math.PI}
+  cameraDistance={300}
+  cameraHeight={400}
+/>
+
+
+**Guitar AMP - Band logo** - My friend at work had a guitar AMP and wanted to replace the logo with their bands logo, so I asked him to send me over an SVG of the logo and then converted it to a 3D model.
+
+<STLViewer
+  client:visible
+  modelPath="/models/brooke/band-logo.stl"
+  height="500px"
+  rotationX={Math.PI * 1.5}
+  rotationZ={Math.PI *2}
+  cameraDistance={100}
+  cameraHeight={200}
+  color="#222222"
+  autoRotate={false}
+/>
+
+## Custom Hooks
+
+Hooks were my most printed items. They were the first thing I printed in January and the last thing I printed in December. Since we rent, we avoid drilling holes. Standard adhesive hooks are often ugly or the wrong size. Designing my own allowed me to match our needs and decor.
+
+### Magnetic Bike Helmet Hook
+
+<STLViewer
+  client:visible
+  modelPath="/models/brooke/helmet-hook.stl"
+  height="300px"
+  rotationX={Math.PI * 1.5}
+  rotationZ={Math.PI*1.5}
+  cameraDistance={200}
+/>
+
+_[Brooke Hatton](https://example.com/hook-design)_
+
+I embedded two magnets into the back. They snap onto a metal panel in our utility cupboard, holding our helmets securely without damaging the walls.
+
+### Wavy Hooks
+
+<STLViewer
+  client:visible
+  modelPath="/models/brooke/maisie-hook.stl"
+  height="300px"
+  rotationX={Math.PI * 1.5}
+  rotationZ={Math.PI}
+  cameraDistance={150}
+  color="#cf96db"
+/>
+_[Brooke Hatton](https://example.com/hook-design)_
+
+These hold work lanyards in our hallway. I used a wavy pattern to embrace the 3D-printed texture rather than trying to hide it.
+
+## Cable Wrap
+
+<STLViewer
+  client:visible
+  modelPath="/models/brooke/dehumidifier-cable-wrap.stl"
+  height="400px"
+  rotationX={Math.PI * 1.5}
+  rotationZ={Math.PI}
+  cameraDistance={180}
+  cameraHeight={20}
+/>
+
+Our dehumidifier doesn't have a built-in way to store the cable when not in use, so I designed a 3D-printed cable wrap attached it with some double-sided tape and solved that problem.
+
+## Storage Boxes
+
+<STLViewer
+  client:visible
+  modelPath="/models/brooke/family-figures-box.stl"
+  height="500px"
+  rotationX={Math.PI * 1.5}
+  cameraHeight={300}
+  rotationZ={Math.PI}
+  cameraDistance={400}
+/>
+
+Maisie needed some storage boxes for the therapy toys she uses at work. Being able to design boxes to exact dimensions meant they fit perfectly in her bag and on her shelves. Off-the-shelf boxes are never quite the right size.
+
+
+## Board Game Organization
+
+This UNO card box is super neat - it holds all the cards in a compact, organized way and makes setup much faster. I've found that a lot of board games benefit from custom inserts, though I've tried to be selective about which ones are worth the time and material.
+
+## Repairs and upgrades
+
+### Ortlieb Pannier Buckle
+
+<STLViewer
+  client:visible
+  modelPath="/models/brooke/ortlieb-webbing.stl"
+  height="300px"
+  rotationZ={Math.PI}
+  cameraDistance={50}
+/>
+
+_[Created by me](https://example.com/ortlieb-buckle)_
+
+I lost the buckle for my Ortlieb pannier bag, and replacements were expensive and hard to source. A 3D-printed version works perfectly and cost pennies in material. This is one of the most satisfying uses of the printer - being able to repair things that would otherwise need replacing entirely.
+
+### Replacement Clothes Airer Foot
+
+<STLViewer
+  client:visible
+  modelPath="/models/brooke/airer-foot.stl"
+  height="300px"
+  rotationX={Math.PI * 1.5}
+  rotationZ={Math.PI}
+  cameraDistance={100}
+/>
+
+_[Created by me](https://example.com/airer-foot)_
+
+One of the feet on our clothes airer broke off, making it unstable. Instead of buying a new airer, I measured the existing feet and printed a replacement. It's held up well over time and saved us from unnecessary waste.
+
+### Ikea Organization Inserts
+
+<STLViewer
+  client:visible
+  modelPath="/models/other/ikea-raskog.stl"
+  height="400px"
+  rotationX={-Math.PI * 1.5}
+  cameraHeight={300}
+  cameraDistance={200}
+/>
+
+We have a IKEA RÅSKOG for the bathroom, its great, however the storage is a bit basic, luckily [NotSure](https://www.printables.com/model/968016-ikea-raskog-sorter) and [d4v3ig](https://makerworld.com/en/models/1265694-ikea-raskog-organizer-trays) have designed some inserts that break up the shelves into more useful storage.
+
+### Laptop Stand
+
+At home I dock my laptop and use an external display, so this simple vertical stand allows me to store both my work and personal laptop without taking up much desk space. It's just a functional piece that does exactly what I need.
+
+### Bike Bottle Cage
+
+<STLViewer
+  client:visible
+  modelPath="/models/other/bottle-cage.stl"
+  height="400px"
+  rotationX={Math.PI * 1.5}
+  rotationZ={Math.PI}
+  cameraDistance={300}
+/>
+
+_[motherfucker - cults3d](https://cults3d.com/en/3d-model/various/side-load-bottle-cage-for-375-ml-can)_
+
+I needed a bottle cage for my bike, but none of the standard options fit well when combined with my bike lock mount. So I found this excellent design, tweaked it to my exact needs, and printed it in PETG. It's been working great for several months now and shows no signs of wear.
+
+## Reflections
+
+The 3D printer has become a useful tool and fun gadget to have around. I you are wondering whether I would recommend it I would say yes, if it broke tomorrow it wouldn't be long until I'd be online ordering a replacement.
