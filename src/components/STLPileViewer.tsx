@@ -1,9 +1,8 @@
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useLoader } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
 import { Physics, RigidBody } from "@react-three/rapier";
 import { Suspense, useEffect, useState } from "react";
 import { STLLoader } from "three/examples/jsm/loaders/STLLoader.js";
-import * as THREE from "three";
 
 interface STLModelConfig {
   url: string;
@@ -27,23 +26,8 @@ function generateRandomColor(): string {
 }
 
 function PhysicsSTL({ config, delay, color }: PhysicsSTLProps) {
-  const [geometry, setGeometry] = useState<THREE.BufferGeometry | null>(null);
+  const geometry = useLoader(STLLoader, config.url);
   const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const loader = new STLLoader();
-    loader.load(
-      config.url,
-      (loadedGeometry) => {
-        loadedGeometry.computeBoundingBox();
-        setGeometry(loadedGeometry);
-      },
-      undefined,
-      (error) => {
-        console.error("Error loading STL:", error);
-      },
-    );
-  }, [config.url]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -52,7 +36,7 @@ function PhysicsSTL({ config, delay, color }: PhysicsSTLProps) {
     return () => clearTimeout(timer);
   }, [delay]);
 
-  if (!geometry || !isVisible) return null;
+  if (!isVisible) return null;
 
   const position = config.position || [
     (Math.random() - 0.5) * 0.3,

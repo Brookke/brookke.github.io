@@ -1,8 +1,7 @@
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useLoader } from "@react-three/fiber";
 import { OrbitControls, Center, Environment } from "@react-three/drei";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense } from "react";
 import { STLLoader } from "three/examples/jsm/loaders/STLLoader.js";
-import * as THREE from "three";
 
 interface STLModelProps {
   url: string;
@@ -19,24 +18,7 @@ function STLModel({
   rotationZ = 0,
   color = "#a9a9a9ff",
 }: STLModelProps) {
-  const [geometry, setGeometry] = useState<THREE.BufferGeometry | null>(null);
-
-  useEffect(() => {
-    const loader = new STLLoader();
-    loader.load(
-      url,
-      (loadedGeometry) => {
-        loadedGeometry.computeBoundingBox();
-        setGeometry(loadedGeometry);
-      },
-      undefined,
-      (error) => {
-        console.error("Error loading STL:", error);
-      },
-    );
-  }, [url]);
-
-  if (!geometry) return null;
+  const geometry = useLoader(STLLoader, url);
 
   return (
     <Center>
