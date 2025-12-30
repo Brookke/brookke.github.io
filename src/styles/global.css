@@ -64,7 +64,7 @@ h4 {
 
 p,
 ul,
-ol ul {
+ol ul, img {
   margin-bottom: 1.5rem;
 }
 

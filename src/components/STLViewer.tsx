@@ -52,11 +52,12 @@ export interface Props {
   rotationZ?: number;
   className?: string;
   color?: string;
+  aspectRatio?: string;
 }
 
 export default function STLViewer({
   modelPath,
-  height = "400px",
+  aspectRatio = "1 / 1",
   cameraDistance = 2,
   cameraHeight = 45,
   autoRotate = true,
@@ -72,8 +73,7 @@ export default function STLViewer({
       className={className}
       style={{
         width: "100%",
-        maxWidth: "800px",
-        height,
+        aspectRatio: aspectRatio,
         margin: "2rem auto",
         borderRadius: "8px",
         overflow: "hidden",
