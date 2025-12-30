@@ -1,3 +1,4 @@
+
 ---
 title: "A Year of 3D Printing"
 date: 2025-12-27 16:10:00 +0100
@@ -5,17 +6,8 @@ categories: Making
 description: "Reflections on a year of functional 3D printing with the Bambu A1 Mini, from custom hooks to replacement parts."
 draft: true
 ---
-
 import STLViewer from "../../components/STLViewer.tsx";
 import STLPileViewer from "../../components/STLPileViewer.tsx";
-
-If you'd asked me a few years back if I thought I'd buy a 3D printer, I would have said no. My experience of 3D printing back when I was in college was that they were very slow, expensive, frequently failed mid-print, and needed constant calibration.
-
-At the beginning of 2025 I bought myself a [Bambu A1 Mini](https://uk.store.bambulab.com/products/a1-mini) printer. What changed? Most of the problems I encountered in college have now been solved, and more importantly, at a price point that feels reasonable. The A1 Mini cost £149, comes with built-in bed leveling and flow rate calibration, and it just works. The printer is compact too, which was an important given we live in a small London flat.
-
-My general philosophy when buying this printer was that I wanted to use it to print useful and functional things. I didn't want to fill the house with a bunch of useless plastic that would end up in landfill before long. A year on, I think I've largely stuck to that principle.
-
-So onto the fun stuff: what have I printed?
 
 <STLPileViewer
   client:visible
@@ -28,37 +20,54 @@ So onto the fun stuff: what have I printed?
     { url: "/models/brooke/airer-foot.stl", scale: 0.01, quantity: 3 },
     { url: "/models/brooke/ortlieb-webbing.stl", scale: 0.01, quantity: 3 },
     { url: "/models/other/bottle-cage.stl", scale: 0.01, quantity: 2 },
-    {url: "/models/brooke/dehumidifier-cable-wrap.stl", scale: 0.01, quantity: 1},
-    {url: "/models/other/map.stl", scale: 0.01, quantity: 1},
-    {url: "/models/other/ikea-raskog.stl", scale: 0.01, quantity: 1},
-    {url: "/models/other/apple-watch-stand.stl", scale: 0.01, quantity: 1},
+    { url: "/models/brooke/dehumidifier-cable-wrap.stl", scale: 0.01, quantity: 1},
+    { url: "/models/other/map.stl", scale: 0.01, quantity: 2},
+    { url: "/models/other/ikea-raskog.stl", scale: 0.01, quantity: 5},
+    { url: "/models/other/apple-watch-stand.stl", scale: 0.01, quantity: 1},
+    { url: "/models/brooke/band-logo.stl", scale: 0.01, quantity: 1},
+    { url: "/models/brooke/screwdriver-rest.stl", scale: 0.01, quantity: 1},
+    { url: "/models/brooke/key-hook-bracket.stl", scale: 0.01, quantity: 1}
 
 ]}
 height="800px"
 backgroundColor="rgba(0,0,0,0)"
 />
 
-## Apple Watch stand
+If you'd asked me a few years back if I thought I'd buy a 3D printer, I would have said no. My experience of 3D printers back when I was in college was that they were very slow, expensive, frequently failed mid-print, and needed constant calibration.
+
+At the beginning of 2025 I bought myself a [Bambu A1 Mini](https://uk.store.bambulab.com/products/a1-mini) printer. What changed? Most of the problems I encountered in college have now been solved, and more importantly, at a price point that feels reasonable. The A1 Mini cost £149, comes with built-in bed levelling and flow rate calibration, and it genuinely just works. The printer is compact too, which was an important given we live in a small London flat.
+
+My general philosophy when buying this printer was that I wanted to use it to print useful and functional things. I didn't want to fill the house with a bunch of useless plastic that would end up in landfill before long. A year on, I think I've largely stuck to that principle.
+
+So what have I printed over the last year? 
+
+
+
+## 1. Under Desk Drawer 
+_By: [Benjamin Kott - Makerworld](https://makerworld.com/en/models/145324-desk-drawer-modular)_
+
+<img src="/models/drawer.jpg" alt="Under Desk Drawer" style={{ width: '100%' }} />
+
+## 2. AirPod Case
+_By: [Mohammad AD - Makerworld](https://makerworld.com/en/models/776040-airpods-pro-2-case)_
+
+<img src="/models/airpod-case.jpg" alt="AirPod Case" style={{ width: '100%' }} />
+
+
+## 3. Apple Watch Stand
+_By: [MarcusP Printables](https://www.printables.com/model/3464-apple-watch-stand)_
 
 <STLViewer
   client:visible
   modelPath="/models/other/apple-watch-stand.stl"
   height="400px"
   rotationX={Math.PI * 1.5}
-
-cameraDistance={200}
+  cameraDistance={200}
 />
-[MarcusP - Printables](https://www.printables.com/model/3464-apple-watch-stand)
 
-I printed this for my partner Maisie's mum who wanted somewhere more permanent to charge and store her Apple Watch charger. This stand holds the charger in place and keeps it all tidy on the bedside table.
+## 4. 3D Maps
+_[Touch Mapper](https://touch-mapper.org/en/)_
 
-## Gifts
-
-I've printed a few personalized gifts throughout the year:
-
-
-
-**Topographic maps** of meaningful locations make for thoughtful presents. I printed a few of these for friends and family, showing places they've lived or traveled to.
 <STLViewer
   client:visible
   modelPath="/models/other/map.stl"
@@ -68,42 +77,59 @@ I've printed a few personalized gifts throughout the year:
   cameraDistance={300}
   cameraHeight={400}
 />
+These make great gifts for friends and family showing places important to them.
 
-
-**Guitar AMP - Band logo** - My friend at work had a guitar AMP and wanted to replace the logo with their bands logo, so I asked him to send me over an SVG of the logo and then converted it to a 3D model.
+## 5. Ikea Organization Inserts
+_By: [NotSure](https://www.printables.com/model/968016-ikea-raskog-sorter) and [d4v3ig](https://makerworld.com/en/models/1265694-ikea-raskog-organizer-trays)_
 
 <STLViewer
   client:visible
-  modelPath="/models/brooke/band-logo.stl"
-  height="500px"
-  rotationX={Math.PI * 1.5}
-  rotationZ={Math.PI *2}
-  cameraDistance={100}
-  cameraHeight={200}
-  color="#222222"
-  autoRotate={false}
+  modelPath="/models/other/ikea-raskog.stl"
+  height="400px"
+  rotationX={-Math.PI * 1.5}
+  cameraHeight={300}
+  cameraDistance={200}
 />
 
-## Custom Hooks
+Our IKEA RÅSKOG bathroom trolley is great, but the storage is basic. Luckily, [NotSure](https://www.printables.com/model/968016-ikea-raskog-sorter) and [d4v3ig](https://makerworld.com/en/models/1265694-ikea-raskog-organizer-trays) have designed some inserts that break up the shelves into more useful storage.
 
-Hooks were my most printed items. They were the first thing I printed in January and the last thing I printed in December. Since we rent, we avoid drilling holes. Standard adhesive hooks are often ugly or the wrong size. Designing my own allowed me to match our needs and decor.
+## 6. Bike Bottle Cage
+_By: [motherfucker - cults3d](https://cults3d.com/en/3d-model/various/side-load-bottle-cage-for-375-ml-can)_
+
+<img src="/models/bike-bottle.jpg" alt="AirPod Case" style={{ width: '100%' }} />
+
+<STLViewer
+  client:visible
+  modelPath="/models/other/bottle-cage.stl"
+  height="400px"
+  rotationX={Math.PI * 1.5}
+  rotationZ={Math.PI}
+  cameraDistance={300}
+/>
+
+I needed a bottle cage for my bike, but off the shelf versions clased with my bike lock mount. So I found this excellent design, tweaked it to my exact needs, and printed it in PETG. It's been working great for several months now and shows no signs of wear.
+
+## 6. Hooks and Mounts
+
+I really didn't think that at the start of the year I'd be writing passionately about the utility of being able to design and print the perfect hook but here we are. They were the first thing I printed in January and the last thing I printed in December. Standard adhesive hooks are often ugly or the wrong size. Designing my own allowed me to match our needs and decor and the objects they hold.
 
 ### Magnetic Bike Helmet Hook
+_By: Brooke Hatton_
 
 <STLViewer
   client:visible
   modelPath="/models/brooke/helmet-hook.stl"
   height="300px"
   rotationX={Math.PI * 1.5}
-  rotationZ={Math.PI*1.5}
+  rotationZ={Math.PI * 1.5}
   cameraDistance={200}
 />
 
-_[Brooke Hatton](https://example.com/hook-design)_
 
 I embedded two magnets into the back. They snap onto a metal panel in our utility cupboard, holding our helmets securely without damaging the walls.
 
-### Wavy Hooks
+### Wavy Hook
+_By: Brooke Hatton_
 
 <STLViewer
   client:visible
@@ -114,11 +140,11 @@ I embedded two magnets into the back. They snap onto a metal panel in our utilit
   cameraDistance={150}
   color="#cf96db"
 />
-_[Brooke Hatton](https://example.com/hook-design)_
 
-These hold work lanyards in our hallway. I used a wavy pattern to embrace the 3D-printed texture rather than trying to hide it.
+These hold work lanyards in our hallway. A neat trick I have found is to use a wavy pattern to embrace the 3D-printed texture rather than trying to hide it, the objects end up looking more premium and intentional that way.
 
-## Cable Wrap
+## 7. Cable Wrap
+_By: Brooke Hatton_
 
 <STLViewer
   client:visible
@@ -130,9 +156,10 @@ These hold work lanyards in our hallway. I used a wavy pattern to embrace the 3D
   cameraHeight={20}
 />
 
-Our dehumidifier doesn't have a built-in way to store the cable when not in use, so I designed a 3D-printed cable wrap attached it with some double-sided tape and solved that problem.
+Our dehumidifier doesn't have built-in cable storage, so I designed a 3D-printed cable wrap attached it with some double-sided tape and solved that problem.
 
-## Storage Boxes
+## 8. Storage Boxes
+_By: Brooke Hatton_
 
 <STLViewer
   client:visible
@@ -144,16 +171,12 @@ Our dehumidifier doesn't have a built-in way to store the cable when not in use,
   cameraDistance={400}
 />
 
-Maisie needed some storage boxes for the therapy toys she uses at work. Being able to design boxes to exact dimensions meant they fit perfectly in her bag and on her shelves. Off-the-shelf boxes are never quite the right size.
+My partner Maisie needed some storage boxes for the therapy toys she uses at work. This was actually one of the things that made Maisie  excited about having a 3D printer in the house.
 
 
-## Board Game Organization
 
-This UNO card box is super neat - it holds all the cards in a compact, organized way and makes setup much faster. I've found that a lot of board games benefit from custom inserts, though I've tried to be selective about which ones are worth the time and material.
-
-## Repairs and upgrades
-
-### Ortlieb Pannier Buckle
+## 9. Ortlieb Pannier Buckle
+_By: Brooke Hatton_
 
 <STLViewer
   client:visible
@@ -163,11 +186,11 @@ This UNO card box is super neat - it holds all the cards in a compact, organized
   cameraDistance={50}
 />
 
-_[Created by me](https://example.com/ortlieb-buckle)_
 
-I lost the buckle for my Ortlieb pannier bag, and replacements were expensive and hard to source. A 3D-printed version works perfectly and cost pennies in material. This is one of the most satisfying uses of the printer - being able to repair things that would otherwise need replacing entirely.
+I lost the buckle for my Ortlieb pannier bag, and replacements were hard to find so I got the calipers out and modelled a replacement.
 
-### Replacement Clothes Airer Foot
+## 10. Clothes Airer Foot
+_By: Brooke Hatton_
 
 <STLViewer
   client:visible
@@ -178,42 +201,41 @@ I lost the buckle for my Ortlieb pannier bag, and replacements were expensive an
   cameraDistance={100}
 />
 
-_[Created by me](https://example.com/airer-foot)_
 
-One of the feet on our clothes airer broke off, making it unstable. Instead of buying a new airer, I measured the existing feet and printed a replacement. It's held up well over time and saved us from unnecessary waste.
+One of the feet on our clothes airer fell off and went missing, making it unstable. Instead of buying a new airer, I measured the existing feet and printed a replacement. It's held up well over time and saved us from unnecessary waste.
 
-### Ikea Organization Inserts
 
-<STLViewer
-  client:visible
-  modelPath="/models/other/ikea-raskog.stl"
-  height="400px"
-  rotationX={-Math.PI * 1.5}
-  cameraHeight={300}
-  cameraDistance={200}
-/>
+## 11. Laptop Stand
 
-We have a IKEA RÅSKOG for the bathroom, its great, however the storage is a bit basic, luckily [NotSure](https://www.printables.com/model/968016-ikea-raskog-sorter) and [d4v3ig](https://makerworld.com/en/models/1265694-ikea-raskog-organizer-trays) have designed some inserts that break up the shelves into more useful storage.
+Holds both my home and work laptop, freeing up space on my desk for more 3D printing!
 
-### Laptop Stand
 
-At home I dock my laptop and use an external display, so this simple vertical stand allows me to store both my work and personal laptop without taking up much desk space. It's just a functional piece that does exactly what I need.
+## Honourable mentions
+### Board Game Organization
 
-### Bike Bottle Cage
+When you get a 3D printer find your favourite board game and search for "3D printed organizer" for that game. There are often awesome designs that make setup and storage much better. For example [this UNO card box by Tridense](https://www.printables.com/model/576903-uno-cards-hardcase) holds all the cards in a compact box that's perfect for travel - much better than the cardboard box they come with.
 
-<STLViewer
-  client:visible
-  modelPath="/models/other/bottle-cage.stl"
-  height="400px"
-  rotationX={Math.PI * 1.5}
-  rotationZ={Math.PI}
-  cameraDistance={300}
-/>
+### Gridfinity
 
-_[motherfucker - cults3d](https://cults3d.com/en/3d-model/various/side-load-bottle-cage-for-375-ml-can)_
+[Gridfinity](https://gridfinity.xyz/) is a modular storage system that uses a grid of interlocking bases and containers. I've printed a few of these to help organize small parts like screws, batteries, and sewing supplies. The modular nature means its easily expanded or reconfigured as needed.
 
-I needed a bottle cage for my bike, but none of the standard options fit well when combined with my bike lock mount. So I found this excellent design, tweaked it to my exact needs, and printed it in PETG. It's been working great for several months now and shows no signs of wear.
 
-## Reflections
+## FAQs
 
-The 3D printer has become a useful tool and fun gadget to have around. I you are wondering whether I would recommend it I would say yes, if it broke tomorrow it wouldn't be long until I'd be online ordering a replacement.
+### What Plastic do you use?
+- **PLA:** For decorative or indoor items (hooks, maps).
+- **PETG:** For items needing heat resistance or durability (bike cage, outdoor parts).
+
+### How much does the plastic cost?
+
+I generally spend £10-15 per kilogram spool of PLA or PETG. The [bike bottle cage](#5-bike-bottle-cage) used about 50g of filament, making the material cost roughly 50p.
+
+### What sites do you use for finding models?
+I mainly use [Printables](https://www.printables.com/) and [Makerworld](https://makerworld.com/en/models). Both have a huge variety of free models.
+
+### What software do you use for designing models?
+I use [OnShape](https://www.onshape.com/) for most projects because it is free for non-commercial use and works in any browser. It is parametric, so I can easily adjust dimensions at any time. If I need to edit files that OnShape cannot import, I use [Fusion 360](https://www.autodesk.com/products/fusion-360/overview).
+
+### Do I recommend getting a 3D printer?
+
+Yes, if you are the kind of person that enjoys making things. I've loved being able to take a problem or need and have a solution spend some time really enjoyed being able to take an annoying problem or issue around the house and within a few hours have designed or found a solution and printed it out. 
