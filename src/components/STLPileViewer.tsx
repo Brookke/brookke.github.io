@@ -38,11 +38,11 @@ function PhysicsSTL({ config, delay, color }: PhysicsSTLProps) {
 
   if (!isVisible) return null;
 
-  const position = config.position || [
-    (Math.random() - 0.5) * 0.3,
-    5,
-    (Math.random() - 0.5) * 0.3,
-  ];
+  const position = [
+    (Math.random() - 0.5) * 4,
+    10,
+    (Math.random() - 0.5) * 3,
+  ] as const;
 
   const scale = config.scale || 1;
 
@@ -71,8 +71,8 @@ function PhysicsSTL({ config, delay, color }: PhysicsSTLProps) {
 function Ground() {
   return (
     <RigidBody type="fixed" colliders="cuboid" friction={0.4}>
-      <mesh position={[0, -0.6, 0]} receiveShadow>
-        <boxGeometry args={[10, 0.5, 10]} />
+      <mesh position={[0, -2, 0]} receiveShadow>
+        <boxGeometry args={[10, 0.5, 6]} />
         <meshStandardMaterial color="#b2b2b2ff" roughness={0.9} />
       </mesh>
     </RigidBody>
@@ -90,9 +90,8 @@ export interface Props {
 
 export default function STLPileViewer({
   models,
-  height = "600px",
   backgroundColor = "rgba(0,0,0,0)",
-  dropDelay = 200,
+  dropDelay = 250,
   className,
 }: Props) {
   // Expand models based on quantity and randomize order
@@ -108,20 +107,21 @@ export default function STLPileViewer({
   const shuffledModels = [...expandedModels].sort(() => Math.random() - 0.5);
 
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative",
+      marginTop: "-50vh"
+    }}>
       <div
         className={className}
         style={{
           width: "100%",
-          maxWidth: "1200px",
-          height,
+          height: "100vh",
           margin: "2rem auto",
           borderRadius: "8px",
           overflow: "hidden",
         }}
       >
         <Canvas
-          camera={{ position: [0, 3, 4], fov: 50 }}
+          camera={{ position: [0, 1.2, 6.9], fov: 50 }}
           shadows
           style={{ background: backgroundColor }}
         >
@@ -140,6 +140,7 @@ export default function STLPileViewer({
               <Ground />
               {shuffledModels.map((model, index) => (
                 <PhysicsSTL
+                  key={index}
                   config={model}
                   delay={index * dropDelay}
                   color={model.color}
@@ -148,7 +149,7 @@ export default function STLPileViewer({
             </Physics>
           </Suspense>
 
-          <OrbitControls
+          {/* <OrbitControls
             enableDamping
             dampingFactor={0.05}
             autoRotate={false}
@@ -157,7 +158,7 @@ export default function STLPileViewer({
             minDistance={3}
             maxDistance={15}
             target={[0, 0, 0]}
-          />
+          /> */}
         </Canvas>
       </div>
     </div>
