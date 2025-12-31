@@ -40,7 +40,7 @@ function PhysicsSTL({ config, delay, color }: PhysicsSTLProps) {
 
   const position = [
     (Math.random() - 0.5) * 4,
-    10,
+    15,
     (Math.random() - 0.5) * 3,
   ] as const;
 
@@ -91,7 +91,7 @@ export interface Props {
 export default function STLPileViewer({
   models,
   backgroundColor = "rgba(0,0,0,0)",
-  dropDelay = 250,
+  dropDelay = 50,
   className,
 }: Props) {
   // Expand models based on quantity and randomize order
@@ -107,9 +107,7 @@ export default function STLPileViewer({
   const shuffledModels = [...expandedModels].sort(() => Math.random() - 0.5);
 
   return (
-    <div style={{ position: "relative",
-      marginTop: "-50vh"
-    }}>
+    <div style={{ position: "relative", marginTop: "-50vh" }}>
       <div
         className={className}
         style={{

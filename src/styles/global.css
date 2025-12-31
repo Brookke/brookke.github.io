@@ -64,7 +64,8 @@ h4 {
 
 p,
 ul,
-ol ul, img {
+ol ul,
+img {
   margin-bottom: 1.5rem;
 }
 
@@ -149,16 +150,14 @@ blockquote cite {
 
 .heading--xl {
   font-size: 3.5rem;
+  padding: 1rem 0;
 }
 
 @media (min-width: 600px) {
   .heading--xl {
     font-size: 4.5rem;
+    padding: 5rem 0;
   }
-}
-
-.header--xl {
-  padding: 5rem 0;
 }
 
 /* Decorative line utility */
