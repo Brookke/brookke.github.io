@@ -1,5 +1,5 @@
 import { Canvas, useLoader } from "@react-three/fiber";
-import { OrbitControls, Center, Environment } from "@react-three/drei";
+import { OrbitControls, Center } from "@react-three/drei";
 import { Suspense } from "react";
 import { STLLoader } from "three/examples/jsm/loaders/STLLoader.js";
 
@@ -84,14 +84,20 @@ export default function STLViewer({
         shadows
         style={{ background: backgroundColor }}
       >
-        {/* <ambientLight intensity={4} /> */}
-        <directionalLight
-          castShadow
-          position={[20, cameraHeight, cameraDistance]}
-          intensity={1}
-        />
-        {/* <directionalLight position={[-1, -1, -1]} intensity={0.3} /> */}
-        <Environment preset="city" />
+        {/* Ambient light for overall scene brightness */}
+        <ambientLight intensity={0.4} />
+
+        {/* Main key light - simulates overhead/window light */}
+        <directionalLight castShadow position={[5, 8, 5]} intensity={1.2} />
+
+        {/* Fill light - softens shadows from the opposite side */}
+        <directionalLight position={[-3, 3, -5]} intensity={0.3} />
+
+        {/* Rim/back light - adds definition and separates objects from background */}
+        <directionalLight position={[-5, 5, -8]} intensity={0.5} />
+
+        {/* Subtle top light for additional depth */}
+        <pointLight position={[0, 10, 0]} intensity={0.3} distance={15} />
 
         <Suspense fallback={null}>
           <STLModel

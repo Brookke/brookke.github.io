@@ -1,6 +1,6 @@
 ---
 title: "A Year of 3D Printing"
-date: 2025-12-27 16:10:00 +0100
+date: 2026-01-04 16:10:00 +0100
 categories: Making
 description: "Reflections on a year of functional 3D printing with the Bambu A1 Mini, from custom hooks to replacement parts."
 draft: true
@@ -10,7 +10,7 @@ import STLViewer from "../../components/STLViewer.tsx";
 import STLPileViewer from "../../components/STLPileViewer.tsx";
 
 <STLPileViewer
-  client:visible
+  client:load
   className="viewer-full-width"
   enableReset={false}
   models={[
@@ -39,7 +39,7 @@ At the beginning of 2025 I bought myself a [Bambu A1 Mini](https://uk.store.bamb
 
 My general philosophy when buying this printer was that I wanted to use it to print useful and functional things. I didn't want to fill the house with a bunch of useless plastic that would end up in landfill before long. A year on, I think I've largely stuck to that principle.
 
-So what have I printed over the last year?
+So here's some of the things I have printed this year:
 
 ## 1. Under Desk Drawer
 
@@ -51,17 +51,7 @@ _By: [Benjamin Kott - Makerworld](https://makerworld.com/en/models/145324-desk-d
   style={{ width: "100%" }}
 />
 
-## 2. AirPod Case
-
-_By: [Mohammad AD - Makerworld](https://makerworld.com/en/models/776040-airpods-pro-2-case)_
-
-<img
-  src="/models/airpod-case.jpg"
-  alt="AirPod Case"
-  style={{ width: "100%" }}
-/>
-
-## 3. Apple Watch Stand
+## 2. Apple Watch Stand
 
 _By: [MarcusP Printables](https://www.printables.com/model/3464-apple-watch-stand)_
 
@@ -72,6 +62,18 @@ _By: [MarcusP Printables](https://www.printables.com/model/3464-apple-watch-stan
   cameraDistance={200}
   color={"#be8dba"}
 />
+
+## 3. AirPod Case
+
+_By: [Mohammad AD - Makerworld](https://makerworld.com/en/models/776040-airpods-pro-2-case)_
+
+<img
+  src="/models/airpod-case.jpg"
+  alt="AirPod Case"
+  style={{ width: "100%" }}
+/>
+
+Attached the top with a bit of double-sided tape, works great!
 
 ## 4. 3D Maps
 
@@ -122,9 +124,9 @@ _By: [motherfucker - cults3d](https://cults3d.com/en/3d-model/various/side-load-
 
 I needed a bottle cage for my bike, but off the shelf versions clashed with my bike lock mount. So I found this excellent design, tweaked it to my exact needs, and printed it in PETG. It's been working great for several months now and shows no signs of wear.
 
-## 6. Hooks and Mounts
+## 7. Hooks and Mounts
 
-I really didn't think that at the start of the year I'd be writing passionately about the utility of being able to design and print the perfect hook but here we are. They were the first thing I printed in January and the last thing I printed in December. Standard adhesive hooks are often ugly or the wrong size. Designing my own allowed me to match our needs and decor and the objects they hold.
+I really didn't think that at the start of 2025 I'd be writing passionately about the utility of being able to design and print the perfect hook but here we are. They were the first thing I printed in January and the last thing I printed in December. Standard adhesive hooks are often ugly or the wrong size. Designing my own allowed me to match our needs and decor and the objects they hold.
 
 ### Magnetic Bike Helmet Hook
 
@@ -156,22 +158,17 @@ _By: Brooke Hatton_
 
 These hold work lanyards in our hallway. A neat trick I have found is to use a wavy pattern to embrace the 3D-printed texture rather than trying to hide it, the objects end up looking more premium and intentional that way.
 
-## 7. Cable Wrap
+## 8. Gridfinity
 
-_By: Brooke Hatton_
-
-<STLViewer
-  client:visible
-  modelPath="/models/brooke/dehumidifier-cable-wrap.stl"
-  rotationX={Math.PI * 1.5}
-  rotationZ={Math.PI}
-  cameraDistance={330}
-  cameraHeight={40}
+<img
+  src="/models/gridfinity.jpg"
+  alt="Gridfinity Storage"
+  style={{ width: "100%" }}
 />
 
-Our dehumidifier doesn't have built-in cable storage, so I designed a 3D-printed cable wrap attached it with some double-sided tape and solved that problem.
+[Gridfinity](https://gridfinity.xyz/) is a modular storage system that uses a grid of interlocking bases and containers. I've printed a few of these to help organize small parts like screws, batteries, and sewing supplies. There's a bunch of online generators like [gridfinitygenerator](https://gridfinitygenerator.com/en) so you can create the exact grid for your draw. And theres hundreds of premade inserts on printables and makerworld. There's also [tooltrace](https://www.tooltrace.ai/) which takes a photo of the object you want to store and generates a custom insert for it.
 
-## 8. Storage Boxes
+## 9. Storage Boxes
 
 _By: Brooke Hatton_
 
@@ -186,7 +183,22 @@ _By: Brooke Hatton_
 
 My partner Maisie needed some storage boxes for the therapy toys she uses at work. This was actually one of the things that made Maisie excited about having a 3D printer in the house.
 
-## 9. Ortlieb Pannier Buckle
+## 10. Cable Wrap
+
+_By: Brooke Hatton_
+
+<STLViewer
+  client:visible
+  modelPath="/models/brooke/dehumidifier-cable-wrap.stl"
+  rotationX={Math.PI * 1.5}
+  rotationZ={Math.PI}
+  cameraDistance={330}
+  cameraHeight={40}
+/>
+
+Our dehumidifier doesn't have built-in cable storage, so I designed a 3D-printed cable wrap attached it with some double-sided tape and solved that problem.
+
+## 11. Ortlieb Pannier Buckle
 
 _By: Brooke Hatton_
 
@@ -197,42 +209,29 @@ _By: Brooke Hatton_
   cameraDistance={50}
 />
 
-I lost the buckle for my Ortlieb pannier bag, and replacements were hard to find so I got the calipers out and modelled a replacement.
+Having a 3D printer also makes it easy to repair or fix items that would otherwise have to be replaced or left broken, I've done this a few times this year already. For example, I lost the buckle for my Ortlieb pannier bag, and replacements were hard to find, so I got the calipers out and modelled a replacement.
 
-## 10. Clothes Airer Foot
+## 12. Laptop Stand
 
-_By: Brooke Hatton_
-
-<STLViewer
-  client:visible
-  modelPath="/models/brooke/airer-foot.stl"
-  rotationX={Math.PI * 1.5}
-  rotationZ={Math.PI}
-  cameraDistance={100}
-  color="#2c2c2c"
-/>
-
-One of the feet on our clothes airer fell off and went missing, making it unstable. Instead of buying a new airer, I measured the existing feet and printed a replacement. It's held up well over time and saved us from unnecessary waste.
-
-## 11. Laptop Stand
-
-Holds both my home and work laptop, freeing up space on my desk for more 3D printing!
-
-## Honourable mentions
-
-### Board Game Organization
-
-When you get a 3D printer find your favourite board game and search for "3D printed organizer" for that game. There are often awesome designs that make setup and storage much better. For example [this UNO card box by Tridense](https://www.printables.com/model/576903-uno-cards-hardcase) holds all the cards in a compact box that's perfect for travel - much better than the cardboard box they come with.
-
-### Gridfinity
+_By: []()_
 
 <img
-  src="/models/gridfinity.jpg"
-  alt="Gridfinity Storage"
+  src="/models/laptop-stand.jpg"
+  alt="Laptop Stand"
   style={{ width: "100%" }}
 />
 
-[Gridfinity](https://gridfinity.xyz/) is a modular storage system that uses a grid of interlocking bases and containers. I've printed a few of these to help organize small parts like screws, batteries, and sewing supplies. The modular nature means its easily expanded or reconfigured as needed.
+Holds both my home and work laptop, freeing up space on my desk for more 3D printing!
+
+## 13. Balancing Tetris Game
+
+By: [Liuk](https://makerworld.com/en/models/1439105-tetris-balance-game?from=search#profileId-1497557)
+
+## 14. Board Game Organization
+
+<img src="/models/uno.jpg" alt="UNO Card Box" style={{ width: "100%" }} />
+
+When you get a 3D printer find your favourite board game and search for "3D printed organizer" for that game. There are often awesome designs that make setup and storage much better. For example [this UNO card box by Tridense](https://www.printables.com/model/576903-uno-cards-hardcase) holds all the cards in a compact box that's perfect for travel - much better than the cardboard box they come with.
 
 ## FAQs
 
@@ -251,7 +250,7 @@ I mainly use [Printables](https://www.printables.com/) and [Makerworld](https://
 
 ### What software do you use for designing models?
 
-I use [OnShape](https://www.onshape.com/) for most projects because it is free for non-commercial use and works in any browser. It is parametric, so I can easily adjust dimensions at any time. If I need to edit files that OnShape cannot import, I use [Fusion 360](https://www.autodesk.com/products/fusion-360/overview).
+I use [OnShape](https://www.onshape.com/) for most projects because it is free for non-commercial use and works in the browser. It is parametric, so I can easily adjust dimensions at any time. If I need to edit files that OnShape cannot import, I use [Fusion 360](https://www.autodesk.com/products/fusion-360/overview).
 
 ### Do I recommend getting a 3D printer?
 

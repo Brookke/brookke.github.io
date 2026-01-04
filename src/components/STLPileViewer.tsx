@@ -1,5 +1,4 @@
 import { Canvas, useLoader } from "@react-three/fiber";
-import { OrbitControls, Environment } from "@react-three/drei";
 import { Physics, RigidBody } from "@react-three/rapier";
 import { Suspense, useEffect, useState } from "react";
 import { STLLoader } from "three/examples/jsm/loaders/STLLoader.js";
@@ -20,8 +19,8 @@ interface PhysicsSTLProps {
 // Generate a random pastel color
 function generateRandomColor(): string {
   const hue = Math.random() * 360;
-  const saturation = 60 + Math.random() * 20; // 60-80%
-  const lightness = 65 + Math.random() * 15; // 65-80%
+  const saturation = 90;
+  const lightness = 70;
   return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
 }
 
@@ -39,7 +38,7 @@ function PhysicsSTL({ config, delay, color }: PhysicsSTLProps) {
   if (!isVisible) return null;
 
   const position = [
-    (Math.random() - 0.5) * 4,
+    (Math.random() - 0.5) * 7,
     15,
     (Math.random() - 0.5) * 3,
   ] as const;
@@ -57,12 +56,7 @@ function PhysicsSTL({ config, delay, color }: PhysicsSTLProps) {
       canSleep={true}
     >
       <mesh geometry={geometry} scale={scale} castShadow receiveShadow>
-        <meshStandardMaterial
-          color={color}
-          roughness={0.35}
-          metalness={0.0}
-          envMapIntensity={0.6}
-        />
+        <meshStandardMaterial color={color} roughness={0.5} metalness={0.1} />
       </mesh>
     </RigidBody>
   );
@@ -71,9 +65,67 @@ function PhysicsSTL({ config, delay, color }: PhysicsSTLProps) {
 function Ground() {
   return (
     <RigidBody type="fixed" colliders="cuboid" friction={0.4}>
-      <mesh position={[0, -2, 0]} receiveShadow>
-        <boxGeometry args={[10, 0.5, 6]} />
-        <meshStandardMaterial color="#b2b2b2ff" roughness={0.9} />
+      <mesh position={[0, -3, 0]} receiveShadow rotation={[-Math.PI / 2, 0, 0]}>
+        <boxGeometry args={[10, 6, 0.25]} />
+        <meshStandardMaterial
+          color="#f5dcb1"
+          roughness={0.7}
+          metalness={0.0}
+          onBeforeCompile={(shader) => {
+            shader.vertexShader = `
+              varying vec2 vUv;
+              varying vec3 vPosition;
+              ${shader.vertexShader}
+            `.replace(
+              `#include <begin_vertex>`,
+              `#include <begin_vertex>
+              vUv = uv;
+              vPosition = position;
+              `,
+            );
+
+            shader.fragmentShader = `
+              varying vec2 vUv;
+              varying vec3 vPosition;
+              ${shader.fragmentShader}
+            `.replace(
+              `#include <color_fragment>`,
+              `#include <color_fragment>
+              // Round the corners by discarding fragments near edges
+              vec2 pos = vPosition.xy;
+              float width = 10.0;
+              float height = 6.0;
+              float radius = 0.5;
+              
+              // Calculate distance from corner
+              vec2 corner = abs(pos) - vec2(width/2.0 - radius, height/2.0 - radius);
+              float cornerDist = length(max(corner, 0.0));
+              
+              // Discard fragments outside the rounded rectangle
+              if (cornerDist > radius) {
+                discard;
+              }
+              
+              // Birch plywood texture
+              // Subtle horizontal grain
+              float noise1 = fract(sin(dot(vUv * vec2(2.0, 30.0), vec2(12.9898, 78.233))) * 43758.5453);
+              float grain = sin(vUv.y * 60.0 + noise1 * 4.0) * 0.08;
+              
+              // Random knots and imperfections
+              float noise2 = fract(sin(dot(vUv * 15.0, vec2(93.989, 67.345))) * 28474.3347);
+              float knots = smoothstep(0.97, 1.0, noise2) * -0.2;
+              
+              // Slight color variation across surface
+              float variation = sin(vUv.x * 2.5 + vUv.y * 1.5) * 0.04;
+              
+              // Lighter streaks (characteristic of birch)
+              float streaks = step(0.85, fract(sin(vUv.y * 25.0) * 43.0)) * 0.1;
+              
+              diffuseColor.rgb *= (1.0 + grain + knots + variation + streaks);
+              `,
+            );
+          }}
+        />
       </mesh>
     </RigidBody>
   );
@@ -119,19 +171,35 @@ export default function STLPileViewer({
         }}
       >
         <Canvas
-          camera={{ position: [0, 1.2, 6.9], fov: 50 }}
+          camera={{ position: [0, 3, 15], fov: 35 }}
           shadows
           style={{ background: backgroundColor }}
         >
-          {/* <ambientLight intensity={0.1}  castShadow/> */}
+          {/* Ambient light for overall scene brightness */}
+          <ambientLight intensity={0.4} />
+
+          {/* Main key light - simulates overhead/window light */}
           <directionalLight
             castShadow
-            position={[10, 10, 10]}
-            intensity={0.02}
-            shadow-mapSize={[1024, 1024]}
+            position={[5, 8, 5]}
+            intensity={1.2}
+            shadow-mapSize={[2048, 2048]}
+            shadow-camera-far={50}
+            shadow-camera-left={-10}
+            shadow-camera-right={10}
+            shadow-camera-top={10}
+            shadow-camera-bottom={-10}
+            shadow-bias={-0.0001}
           />
-          <directionalLight position={[-10, -10, -10]} intensity={0.4} />
-          <Environment preset="city" />
+
+          {/* Fill light - softens shadows from the opposite side */}
+          <directionalLight position={[-3, 3, -5]} intensity={0.3} />
+
+          {/* Rim/back light - adds definition and separates objects from background */}
+          <directionalLight position={[-5, 5, -8]} intensity={0.5} />
+
+          {/* Subtle top light for additional depth */}
+          <pointLight position={[0, 10, 0]} intensity={0.3} distance={15} />
 
           <Suspense fallback={null}>
             <Physics gravity={[0, -9.81, 0]}>
@@ -146,17 +214,6 @@ export default function STLPileViewer({
               ))}
             </Physics>
           </Suspense>
-
-          {/* <OrbitControls
-            enableDamping
-            dampingFactor={0.05}
-            autoRotate={false}
-            enablePan={true}
-            enableZoom={false}
-            minDistance={3}
-            maxDistance={15}
-            target={[0, 0, 0]}
-          /> */}
         </Canvas>
       </div>
     </div>

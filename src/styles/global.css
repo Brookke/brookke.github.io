@@ -150,13 +150,11 @@ blockquote cite {
 
 .heading--xl {
   font-size: 3.5rem;
-  padding: 1rem 0;
 }
 
 @media (min-width: 600px) {
   .heading--xl {
     font-size: 4.5rem;
-    padding: 5rem 0;
   }
 }
 
