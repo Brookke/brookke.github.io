@@ -2,11 +2,13 @@
 export interface Props {
   title: string;
   description?: string;
+  image?: string;
 }
 
 const {
   title,
   description = "Brooke Hatton, Full Stack Developer. 1st Class Honours, BEng Computer Science, University Of York.",
+  image,
 } = Astro.props;
 
 // Import the global stylesheet
@@ -24,6 +26,18 @@ import "../styles/global.css";
       content="rt53dnmciFFqyh_5cgSE9MuIYbirehIoiOCwlxYpKsg"
     />
     <title>{title}</title>
+
+    <!-- Open Graph / Social Media Preview -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {image && <meta property="og:image" content={new URL(image, Astro.site).href} />}
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {image && <meta name="twitter:image" content={new URL(image, Astro.site).href} />}
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
