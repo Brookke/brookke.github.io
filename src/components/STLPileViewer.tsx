@@ -159,7 +159,9 @@ export default function STLPileViewer({
   const shuffledModels = [...expandedModels].sort(() => Math.random() - 0.5);
 
   return (
-    <div style={{ position: "relative", marginTop: "-50vh" }}>
+    <div
+      style={{ position: "relative", marginTop: "calc((50vh + 144px) * -1)" }}
+    >
       <div
         className={className}
         style={{
