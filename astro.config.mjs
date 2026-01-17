@@ -5,6 +5,11 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: "https://brookehatton.com",
   integrations: [mdx(), react()],
+  image: {
+    responsiveStyles: true,
+    layout: "constrained",
+  
+  },
   markdown: {
     shikiConfig: {
       theme: "catppuccin-mocha",

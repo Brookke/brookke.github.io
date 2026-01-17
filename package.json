@@ -10,14 +10,14 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
+    "@astrojs/check": "^0.9.6",
     "@astrojs/mdx": "^4.3.13",
     "@astrojs/react": "^4.4.2",
-    "@astrojs/rss": "^4.0.12",
+    "@astrojs/rss": "^4.0.15",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.4.2",
     "@react-three/rapier": "^2.2.0",
-    "astro": "^5.9.2",
+    "astro": "^5.16.11",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "three": "^0.182.0",
