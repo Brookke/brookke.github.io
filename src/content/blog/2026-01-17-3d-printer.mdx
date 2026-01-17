@@ -1,13 +1,12 @@
 ---
 title: "A Year of 3D Printing"
-date: 2026-01-04 16:10:00 +0100
+date: 2026-01-17 16:40:00 +0100
 categories: Making
 description:
   "If you'd asked me a few years back if I thought I'd buy a 3D printer, I would
   have said no. My experience of 3D printers back when I was in college was that
   they were very slow, expensive, frequently failed mid-print, and needed
   constant calibration..."
-draft: true
 ---
 
 import STLViewer from "../../components/STLViewer.tsx";
@@ -20,6 +19,7 @@ import gridfinityImage from "../../images/3d-prints/gridfinity.jpg";
 import laptopStandImage from "../../images/3d-prints/laptop-stand.jpg";
 import tetrisImage from "../../images/3d-prints/tetris.jpg";
 import unoImage from "../../images/3d-prints/uno.jpg";
+import dehumidifierWrapImage from "../../images/3d-prints/dehumidifier-cable-wrap.jpg";
 
 <STLPileViewer
   client:load
@@ -81,7 +81,7 @@ I really didn't think that at the start of 2025 I'd be writing passionately
 about the utility of being able to design and print the perfect hook but here we
 are. They were the first thing I printed in January and the last thing I printed
 in December. Standard adhesive hooks are often ugly or the wrong size. Designing
-my own allowed me to match our needs and decor and the objects they hold.
+my own allowed me to match our needs, the decor, and the objects they hold.
 
 ### Magnetic Bike Helmet Hook
 
@@ -113,8 +113,8 @@ _By: Brooke Hatton_
 />
 
 These hold work lanyards in our hallway. A neat trick I have found is to use a
-wavy pattern to embrace the 3D-printed texture rather than trying to hide it,
-the objects end up looking more premium and intentional that way.
+wavy pattern to embrace the 3D-printed texture rather than trying to hide it.
+The objects end up looking more premium and intentional that way.
 
 ## 2. Ortlieb Pannier Buckle
 
@@ -129,7 +129,7 @@ _By: Brooke Hatton_
 
 Having a 3D printer and basic CAD skills makes it easy to repair items that you
 would otherwise replace or leave broken. When I lost the buckle for my Ortlieb
-pannier bag, I used the calipers out and modelled a replacement.
+pannier bag, I pulled out the calipers and modelled a replacement.
 
 ## 3. Storage Boxes
 
@@ -152,14 +152,7 @@ a 3D printer in the house.
 
 _By: Brooke Hatton_
 
-<STLViewer
-  client:visible
-  modelPath="/models/brooke/dehumidifier-cable-wrap.stl"
-  rotationX={Math.PI * 1.5}
-  rotationZ={Math.PI}
-  cameraDistance={330}
-  cameraHeight={40}
-/>
+<Image src={dehumidifierWrapImage} alt="Dehumidifier Cable Wrap" />
 
 Our dehumidifier lacked built-in cable storage, leaving the cord trailing on the
 floor. I designed this custom wrap and attached it with double-sided tape. It's
@@ -172,8 +165,8 @@ Makerworld_](https://makerworld.com/en/models/145324-desk-drawer-modular)
 
 <Image src={drawerImage} alt="Under Desk Drawer" style={{ width: "100%" }} />
 I've always got a pile of random bits and bobs on my desk, so I printed this
-under-desk drawer to try help keep things tidy. It fits perfectly under my desk
-and holds things like a portable ssd, and some stationery.
+under-desk drawer to help keep things tidy. It fits perfectly under my desk and
+holds things like a portable SSD, and some stationery.
 
 ## 6. Apple Watch Stand
 
@@ -211,8 +204,8 @@ every drawer in your house and printing custom inserts for everything you own.
 
 [Gridfinity](https://gridfinity.xyz/) is a modular storage system that uses a
 grid of interlocking bases and containers. Really useful for taking that junk
-drawer of batteries, screws, and that the random allen key you got from an Ikea
-flat-pack and brining some order to it.
+drawer of batteries, screws, and that random allen key you got from an Ikea
+flat-pack and bringing some order to it.
 
 You can use tools like
 [Gridfinity Generator](https://gridfinitygenerator.com/en) to create the exact
@@ -281,14 +274,14 @@ These make great gifts for friends and family showing places important to them.
 
 <Image src={unoImage} alt="UNO Card Box" style={{ width: "100%" }} />
 
-When you get a 3D printer find your favourite board game and search for "3D
+When you get a 3D printer, find your favourite board game and search for "3D
 printed organiser" for that game. There are often awesome designs that make
 setup and storage much better. For example
 [this UNO card box by Tridense](https://www.printables.com/model/576903-uno-cards-hardcase)
 holds all the cards in a compact box that's perfect for travel - much better
 than the cardboard box they come with.
 
-## 14. Balancing Tetris Game
+## 14. Tetris Balance Game
 
 By:
 [Liuk](https://makerworld.com/en/models/1439105-tetris-balance-game?from=search#profileId-1497557)
@@ -306,8 +299,8 @@ By:
 ### How much does the plastic cost?
 
 I generally spend £10-15 per kilogram spool of PLA or PETG. The
-[bike bottle cage](https://www.google.com/search?q=%2310-bike-bottle-cage) used
-about 50g of filament, making the material cost roughly 50p.
+[bike bottle cage](#10-bike-bottle-cage) used about 50g of filament, making the
+material cost roughly 50p.
 
 ### What sites do you use for finding models?
 
@@ -325,7 +318,6 @@ cannot import, I use
 
 ### Do I recommend getting a 3D printer?
 
-Yes, if you are the kind of person that enjoys making things. I've loved being
-able to take a problem or need and have a solution spend some time really
-enjoyed being able to take an annoying problem or issue around the house and
-within a few hours have designed or found a solution and printed it out.
+Yes, if you enjoy making things. I love identifying an annoying problem around
+the house and designing or finding a solution. Within a few hours, I can have a
+custom part printed and ready to use.
