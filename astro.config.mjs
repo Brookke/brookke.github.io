@@ -8,7 +8,6 @@ export default defineConfig({
   image: {
     responsiveStyles: true,
     layout: "constrained",
-  
   },
   markdown: {
     shikiConfig: {
